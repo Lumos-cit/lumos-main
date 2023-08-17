@@ -1,0 +1,23 @@
+.page-item .page-link {
+  border-radius: 8px;
+  color: rgb(20, 93, 127);
+  text-decoration: none;
+}
+
+.page-item a.page-link:hover {
+  background-color: #232323;
+  color: rgb(20, 93, 127);
+}
+
+.page-item.active .page-link {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: rgb(20, 93, 127);
+  border: 1px solid rgb(20, 93, 127);
+}
+
+.page-item.disabled .page-link {
+  color: #2b2b2b;
+  pointer-events: none;
+  cursor: auto;
+}

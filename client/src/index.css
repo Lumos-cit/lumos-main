@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CustomFont1';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CustomFont2';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CustomFont3';
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CustomFont4';
+  src: url('/fonts/IBMPlexSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CustomFont5';
+  src: url('/fonts/IBMPlexSans-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CustomFont6';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CustomFont7';
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+
+.poppins-medium{
+  font-family: 'CustomFont1', sans-serif;
+
+}
+.poppins-regular{
+  font-family: 'CustomFont2', sans-serif;
+
+}
+.poppins-light{
+  font-family: 'CustomFont3', sans-serif;
+
+}
+.ibm-bold{
+  font-family: 'CustomFont4', sans-serif;
+
+}
+.ibm-italic{
+  font-family: 'CustomFont5', sans-serif;
+
+}
+.poppins-semibold{
+  font-family: 'CustomFont6', sans-serif;
+
+}
+.poppins-bold{
+  font-family: 'CustomFont7', sans-serif;
+
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+  color: #D4A400;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  color: #D4A400;
+}
