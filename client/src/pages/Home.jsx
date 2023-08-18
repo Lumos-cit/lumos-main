@@ -9,10 +9,10 @@ import SpotlightMain from "../components/SpotlightMain";
 function Home() {
   return (
     <div className="overflow-hidden">
-      {/* <MainHead /> */}
+      <MainHead />
       <MostRead />
       <News />
-      <SpotlightMain />
+      {/* <SpotlightMain /> */}
       <Articles />
       <JoinUs />
     </div>
