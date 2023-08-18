@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <div className="bg-[#0C0C0C] flex justify-between p-2 z-50 relative ">
       <div className="basis-1/4">
-        <div className="drawer">
+        <div className="drawer lg:hidden">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
             <label
@@ -85,13 +85,13 @@ function NavBar() {
               {/* <li>
               <Link className="text-black poppins-regular text-xl ml-2 hover:text-black"> Campus Life</Link>
               </li> */}
-              <hr />
+              {/* <hr />
               <li>
                 <Link className="text-black poppins-regular text-lg hover:text-black">
                   {" "}
                   Featured
                 </Link>
-              </li>
+              </li> */}
               <hr />
               <li>
                 <Link
@@ -103,14 +103,17 @@ function NavBar() {
                 </Link>
               </li>
               <hr />
-              {/* <li>
-                <Link className="text-black poppins-regular text-sm lg:text-xl ml-2 hover:text-black">
+              <li>
+                <Link
+                  className="text-black poppins-regular text-sm lg:text-xl ml-2 hover:text-black"
+                  to={"/campuslife"}
+                >
                   {" "}
-                  Events
+                  CampusLife
                 </Link>
               </li>
               <hr />
-              <li>
+              {/* <li>
                 <a className="text-black poppins-regular text-sm lg:text-xl ml-2 hover:text-black">
                   {" "}
                   Placements

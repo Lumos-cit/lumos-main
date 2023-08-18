@@ -64,22 +64,34 @@ function Articles() {
 
       <div className="flex justify-center lg:justify-between mt-[5%] lg:mt-10 w-5/6 mx-auto flex-wrap">
         <div>
-          <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]">
+          <button
+            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            onClick={() => navigate("/xplore")}
+          >
             XPLORE
           </button>
         </div>
         <div>
-          <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]">
+          <button
+            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            onClick={() => navigate("/campuslife")}
+          >
             CAMPUS LIFE
           </button>
         </div>
         <div>
-          <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]">
+          <button
+            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            onClick={() => navigate("/studenthq")}
+          >
             STUDENT HQ
           </button>
         </div>
         <div>
-          <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]">
+          <button
+            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            onClick={() => navigate("/career")}
+          >
             CAREER
           </button>
         </div>
