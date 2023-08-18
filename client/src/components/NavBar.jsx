@@ -9,7 +9,7 @@ function NavBar() {
   const router = useNavigate();
 
   return (
-    <div className="bg-[#0C0C0C] flex justify-between p-2">
+    <div className="bg-[#0C0C0C] flex justify-between p-2 z-50 relative ">
       <div className="basis-1/4">
         <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
