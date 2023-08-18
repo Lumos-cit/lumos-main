@@ -37,12 +37,12 @@ function RouteNames() {
         >
           NEWS
         </h1>
-        <h1
+        {/* <h1
           onClick={() => router("/spotlight")}
           className="text-black poppins-medium hover:cursor-pointer"
         >
           SPOT LIGHT
-        </h1>
+        </h1> */}
       </div>
     </div>
   );
