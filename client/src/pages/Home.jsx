@@ -12,7 +12,7 @@ function Home() {
       {/* <MainHead /> */}
       <MostRead />
       <News />
-      {/* <SpotlightMain /> */}
+      <SpotlightMain />
       <Articles />
       <JoinUs />
     </div>
