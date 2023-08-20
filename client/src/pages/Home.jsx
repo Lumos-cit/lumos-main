@@ -12,7 +12,7 @@ function Home() {
     <div className="overflow-hidden">
       <MainHead />
       <MostRead />
-      <News />
+      {/* <News /> */}
       <News1/>
       {/* <SpotlightMain /> */}
       <Articles />
