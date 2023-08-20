@@ -8,9 +8,11 @@ import Article from "./pages/Article";
 import CampusLife from "./pages/CampusLife";
 import Career from "./pages/Career";
 import News from "./pages/News";
+import News1 from "./components/News1";
 import SpotLight from "./pages/SpotLight";
 import StudentHQ from "./pages/StudentHQ";
 import Xplore from "./pages/Xplore";
+import Newspage from './components/NewsPage'
 
 function App() {
   return (
@@ -24,9 +26,11 @@ function App() {
         <Route path="campuslife" element={<CampusLife />} />
         <Route path="career" element={<Career />} />
         <Route path="news" element={<News />} />
+        <Route path="news1" element={<News1 />} />
         <Route path="spotlight" element={<SpotLight />} />
         <Route path="studenthq" element={<StudentHQ />} />
         <Route path="xplore" element={<Xplore />} />
+        <Route path="/news/:news_id" element={<Newspage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
