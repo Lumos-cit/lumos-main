@@ -1,0 +1,35 @@
+.news-card-0{
+
+  background-color: #FF7575;
+  position: relative;
+  border-radius: 2rem;
+  cursor: pointer;
+  
+}
+.news-card-1{
+
+  background-color: #67FFFF;
+  position: relative;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.news-card-2{
+
+  background-color: #EDFF7D;
+  position: relative;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.news-card-3{
+  
+  background-color: #8490FF;
+  position: relative;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.gap-0{
+  gap:10;
+}
+.gap-1{
+  gap:10;
+}
