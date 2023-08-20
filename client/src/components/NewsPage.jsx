@@ -37,12 +37,20 @@ function NewsPage() {
         <h1 className="poppins-bold text-[50px] lg:text-[100px] text-white">{newsData.title}</h1>
         <br></br>
         <p className="text-white">{newsData.content}</p>
-        <div className="author-details text-white">
-          <h2 className="text-white">Author Details</h2>
-          <p>Name: {authorData.name}</p>
-          <p>Department: {authorData.department}</p>
-          <p>Bio: {authorData.bio}</p>
-          <img src={authorData.profile_pic} alt="Author Profile" />
+        <div className="author-details text-white flex lg:flex-cols py-[5%] md:flex-row">
+          <div className="">
+           <img src={authorData.profile_pic} className='lg:w-40 lg:h-40 md:w-20 md:h-20'  alt="Author Profile" />
+
+
+          </div>
+          <div className=" px-[5%]">
+            <p  className="font-bold text-2xl my-2">NEWS by:</p>
+            <p className="font-bold text-xl my-2"> {authorData.name}</p>
+            <p className=" text-xl my-2">{authorData.department}</p>
+            <p className="font-italic "> {authorData.bio}</p>
+
+          </div>
+        
         </div>
       </div>
     </div>

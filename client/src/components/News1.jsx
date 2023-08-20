@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import StickWithUs from '../SvgComponents/StickWithUs';
-
+import '../assets/New1.css'
 const News1 = () => {
   const [news, setNews] = useState([]);
   const [authors, setAuthors] = useState([]);
@@ -33,44 +33,47 @@ const News1 = () => {
   return (
     <>
       <div className="bg-white">
-        <StickWithUs />
+      <StickWithUs />
 
-        <h1 className="ibm-bold text-6xl lg:text-[150px] text-center text-black leading-none pt-10">
-          NEWS
-        </h1>
-        <p className="text-[#FFC600] text-[48px] text-center ibm-bold leading-none">
-          Stay Updated
-        </p>
+      <h1 className="ibm-bold text-6xl lg:text-[150px] text-center text-black leading-none pt-10">
+        NEWS
+      </h1>
+      <p className="text-[#FFC600] text-[48px] text-center ibm-bold leading-none">
+        Stay Updated
+      </p>
+      <div className="px-[15%] py-[5%] h-[100vh] grid grid-cols-2 grid-rows-2 gap-8 ">
         {news.map((item, index) => (
           <div
             key={index}
-            className="w-20 h-30 bg-slate-200"
-            onClick={() => navigate(`/news/${item.news_id}`)} // Navigate to the NewsPage with the news_id parameter
-            style={{ cursor: 'pointer' }} // Add cursor pointer for better UX
+            onClick={() => navigate(`/news/${item.news_id}`)} 
+            style={{ cursor: 'pointer' }} 
+            className={`news-card-${index % 4}`}
           >
-            <p>{item.title}</p>
-            {authors.map((author) =>
-              author.author_id === item.author_id ? (
-                <div key={author.author_id} className="w-20 h-30 my-10">
-                  <p>{item.createdAt.slice(0, 10)}</p>
-                  <p>{author.name}</p>
-                  {/* Display additional author details here */}
-                </div>
-              ) : null
-            )}
+            <div className="px-[10%] py-[10%]">
+              <p className="ibm-bold text-2xl text-black">{item.createdAt.slice(0, 10)}</p>
+              <p className="ibm-bold text-xl text-white">{item.title}</p>
+              {authors.map((author) =>
+                author.author_id === item.author_id ? (
+                  <div key={author.author_id} className="">
+                    <p className="absolute bottom-10 left-12 text-xl ibm-italic text-white">{author.name}</p>
+                  </div>
+                ) : null
+              )}
+            </div>
           </div>
         ))}
-        <div className="h-[30%] w-full border-[#FFC600] relative border rounded-2xl flex justify-center items-center">
-          <div>
-            <button
-              className="border-[#D4A400] btn btn-outline text-[#D4A400] hover:bg-custom-2 hover:text-white"
-              onClick={() => navigate("/news")}
-            >
-              Discover More
-            </button>
-          </div>
+      </div>
+      <div className="h-[30%] w-full  relative  rounded-2xl flex justify-center items-center">
+        <div>
+          <button
+            className="border-[#D4A400] btn btn-outline text-[#D4A400] hover:bg-custom-2 hover:text-white mb-[15%]"
+            onClick={() => navigate("/news")}
+          >
+            Discover More NEWS
+          </button>
         </div>
       </div>
+    </div>
     </>
   );
 };
