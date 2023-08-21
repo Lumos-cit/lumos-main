@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Blocks from "editorjs-blocks-react-renderer";
+
 
 function NewsPage() {
   const { news_id } = useParams(); // Access the news_id parameter from the route
@@ -36,7 +38,41 @@ function NewsPage() {
         <br></br>
         <h1 className="poppins-bold text-[50px] lg:text-[100px] text-white">{newsData.title}</h1>
         <br></br>
-        <p className="text-white">{newsData.content}</p>
+        <p className="text-white">
+        {newsData && (
+            <Blocks
+              data={JSON.parse(newsData.content)}
+              config={{
+                embed: {
+                  className: "border-0",
+                },
+                header: {
+                  className: "font-bold",
+                },
+                image: {
+                  className: "w-full max-w-screen-md",
+                  actionsClassNames: {
+                    stretched: "w-full h-80 object-cover",
+                    withBorder: "border border-2",
+                    withBackground: "p-2",
+                  },
+                },
+                list: {
+                  className: "list-inside",
+                },
+                paragraph: {
+                  className: "text-white poppins-regular leading-relaxed",
+                  actionsClassNames: {
+                    alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
+                  },
+                },
+                quote: {
+                  className: "py-3 px-5 italic font-serif",
+                },
+              }}
+            />
+          )}
+        </p>
         <div className="author-details text-white flex lg:flex-cols py-[5%] md:flex-row">
           <div className="">
            <img src={authorData.profile_pic} className='lg:w-40 lg:h-40 md:w-20 md:h-20'  alt="Author Profile" />
@@ -47,7 +83,7 @@ function NewsPage() {
             <p  className="font-bold text-2xl my-2">NEWS by:</p>
             <p className="font-bold text-xl my-2"> {authorData.name}</p>
             <p className=" text-xl my-2">{authorData.department}</p>
-            <p className="font-italic "> {authorData.bio}</p>
+            <p className="font-italic my-2 "> {authorData.bio}</p>
 
           </div>
         
