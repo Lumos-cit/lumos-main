@@ -18,13 +18,7 @@ function Articles() {
       isMounted.current = true;
       fetchArticles();
     }
-    // let ignore = false;
-    // if (!ignore) {
-    //   fetchArticles();
-    // }
-    // return () => {
-    //   ignore = true;
-    // };
+
   }, []);
 
   const fetchArticles = () => {

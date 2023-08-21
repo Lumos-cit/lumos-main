@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Blocks from "editorjs-blocks-react-renderer";
+
 import SectionHead from "../Components/SectionHead";
 import SectionFlex from "../Components/SectionFlex";
 import {
@@ -75,45 +77,49 @@ function MainHead() {
                         </div>
                         <div className="font-italic text-xl max-h-[10rem] scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent">
                           <p className="scroll-content">
-                            {card.content.substring(0, 100)}
+                            {card && (
+                                <Blocks
+                                  data={JSON.parse(card.content)}
+                                  config={{
+                                    embed: {
+                                      className: "border-0",
+                                    },
+                                    header: {
+                                      className: "font-bold",
+                                    },
+                                    image: {
+                                      className: "w-full max-w-screen-md",
+                                      actionsClassNames: {
+                                        stretched: "w-full h-80 object-cover",
+                                        withBorder: "border border-2",
+                                        withBackground: "p-2",
+                                      },
+                                    },
+                                    list: {
+                                      className: "list-inside",
+                                    },
+                                    paragraph: {
+                                      className: "text-white poppins-regular leading-relaxed",
+                                      actionsClassNames: {
+                                        alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
+                                      },
+                                    },
+                                    quote: {
+                                      className: "py-3 px-5 italic font-serif",
+                                    },
+                                  }}
+                                />
+                              )}
                             <Link
                               to={`/article/${card.article_id}`}
-                              className="text-yellow-500"
+                              className="text-yellow-500 ml-4"
                             >
                               Continue Reading......
                             </Link>
-                            {/* {showFullContent
-                              ? JSON.parse(card.content).blocks.map((block) => {
-                                  if (block.type === "paragraph") {
-                                    return <p>{block.data.text}</p>;
-                                  }
-                                  if (block.type === "list") {
-                                    return (
-                                      <ul>
-                                        {block.data.items.map((item) => (
-                                          <li>{item}</li>
-                                        ))}
-                                      </ul>
-                                    );
-                                  }
-                                  return null;
-                                })
-                              : JSON.parse(
-                                  card.content
-                              ).blocks[0].data.text.substring(0, 50) + "..."
-                            } */}
+                       
                           </p>
                         </div>
-                        {/* {!showFullContent && (
-                          <div className="text-yellow-500 mt-2 cursor-pointer bottom-10">
-                            <Link
-                              to={`/article/${card.article_id}`}
-                              className="text-yellow-500"
-                            >
-                              Continue Reading......
-                            </Link>
-                          </div>
-                        )} */}
+               
                       </div>
                     </div>
                   </div>
