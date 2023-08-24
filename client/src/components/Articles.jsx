@@ -15,7 +15,10 @@ function Articles() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchArticles();
+    if (!isMounted.current) {
+      isMounted.current = true;
+      fetchArticles();
+    }
   }, []);
 
   function fetchArticles() {
