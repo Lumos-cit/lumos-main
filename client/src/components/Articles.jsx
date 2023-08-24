@@ -15,13 +15,7 @@ function Articles() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let isfetch = true;
-    if (isfetch) {
-      fetchArticles();
-    }
-    return () => {
-      isfetch = false;
-    };
+    fetchArticles();
   }, []);
 
   function fetchArticles() {
