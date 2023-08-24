@@ -161,9 +161,9 @@ function Articles() {
           })}
       </div>
       <div className="flex justify-center">
-        <button className="btn bg-custom-1 btn-wide mx-auto text-slate-400 hover:text-white">
+        {/* <button className="btn bg-custom-1 btn-wide mx-auto text-slate-400 hover:text-white">
           DISCOVER MORE
-        </button>
+        </button> */}
       </div>
     </div>
   );
