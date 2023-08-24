@@ -6,48 +6,72 @@ import axios from "axios";
 import ink from "/Assets/Images/ink.svg";
 import poster from "/Assets/Images/poster.svg";
 import NotJustArticles from "../SvgComponents/NotJustArticles";
+import AuthorName from "./AuthorName";
 
 function Articles() {
-  const [articles, setarticles] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [authors, setAuthors] = useState([]);
   const isMounted = useRef(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isMounted.current) {
-      isMounted.current = true;
+    let isfetch = true;
+    if (isfetch) {
       fetchArticles();
     }
-
+    return () => {
+      isfetch = false;
+    };
   }, []);
 
-  const fetchArticles = () => {
-    const randomArr = getRandomNumbers();
-    setarticles((prevArticles) => []);
-    // console.log(randomArr);
-    randomArr.forEach(async (rnum) => {
-      const articleData = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + `/api/article/${rnum}`
-      );
+  function fetchArticles() {
+    axios
+      .get(import.meta.env.VITE_BACKEND_URL + `/api/articles?limit=${6}`)
+      .then((res) => {
+        console.log(res.data.data);
+        setArticles(res.data.data);
+        articles.forEach((val) => {
+          fetchAuthor(val.author_id);
+        });
+      });
+  }
 
-      const authorData = await axios.get(
-        import.meta.env.VITE_BACKEND_URL +
-          `/author/${articleData.data.author_id}`
-      );
-      setarticles((prevArticles) => [...prevArticles, articleData.data]);
-      setAuthors((prevAuthors) => [...prevAuthors, authorData.data]);
-    });
-  };
+  function fetchAuthor(authorId) {
+    axios
+      .get(import.meta.env.VITE_BACKEND_URL + "/author/" + authorId)
+      .then((res) => {
+        console.log(res.data);
+        setAuthors((prevAuthors) => [...prevAuthors, res.data]);
+      });
+  }
 
-  const getRandomNumbers = () => {
-    let tempSet = new Set();
-    while (tempSet.size < 6) {
-      // 8 should be changed to 48
-      let value = Math.floor(Math.random() * 8 + 1);
-      tempSet.add(value);
-    }
-    return [...tempSet];
-  };
+  // const fetchArticles = () => {
+  //   const randomArr = getRandomNumbers();
+  //   setarticles((prevArticles) => []);
+  //   // console.log(randomArr);
+  //   randomArr.forEach(async (rnum) => {
+  //     const articleData = await axios.get(
+  //       import.meta.env.VITE_BACKEND_URL + `/api/article/${rnum}`
+  //     );
+
+  //     const authorData = await axios.get(
+  //       import.meta.env.VITE_BACKEND_URL +
+  //         `/author/${articleData.data.author_id}`
+  //     );
+  //     setarticles((prevArticles) => [...prevArticles, articleData.data]);
+  //     setAuthors((prevAuthors) => [...prevAuthors, authorData.data]);
+  //   });
+  // };
+
+  // const getRandomNumbers = () => {
+  //   let tempSet = new Set();
+  //   while (tempSet.size < 6) {
+  //     // 8 should be changed to 48
+  //     let value = Math.floor(Math.random() * 8 + 1);
+  //     tempSet.add(value);
+  //   }
+  //   return [...tempSet];
+  // };
   return (
     <div className="relative bg-white h-full pt-[10%] lg:pt-2">
       <NotJustArticles />
@@ -112,9 +136,8 @@ function Articles() {
         <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
         <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
         <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" /> */}
-        {articles?.length < 6 ? (
-          <h1>Loading...</h1>
-        ) : (
+        {articles &&
+          authors &&
           articles.map((article, index) => {
             return (
               <div
@@ -130,14 +153,15 @@ function Articles() {
                   <p className="text-[10px] leading-[10px] font-semibold mt-2 mb-[10px] md:text-[14px]">
                     {article.title}
                   </p>
-                  <p className="text-[8px] uppercase text-[#FFC600] md:text-[12px] md:mt-7">
-                    BY {authors[index].name} , {authors[index].department}
-                  </p>
+                  {/* <p className="text-[8px] uppercase text-[#FFC600] md:text-[12px] md:mt-7">
+                    BY {authors && authors[index].name} ,{" "}
+                    {authors && authors[index].department}
+                  </p> */}
+                  <AuthorName authorId={article.author_id} />
                 </div>
               </div>
             );
-          })
-        )}
+          })}
       </div>
       <div className="flex justify-center">
         <button className="btn bg-custom-1 btn-wide mx-auto text-slate-400 hover:text-white">

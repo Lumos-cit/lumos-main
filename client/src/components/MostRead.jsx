@@ -6,57 +6,79 @@ import book from "/Assets/Images/book.svg";
 import poster from "/Assets/Images/poster.svg";
 import carrer1 from "/Assets/Images/Career1.svg";
 import carrer2 from "/Assets/Images/Career2.svg";
+import AuthorName from "./AuthorName";
 
 function MostRead() {
-  const [articles, setarticles] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [authors, setAuthors] = useState([]);
   const isMounted = useRef(false);
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   if (!isMounted.current) {
+  //     isMounted.current = true;
+  //     fetchArticles();
+  //   }
+  //   let ignore = false;
+  //   if (!ignore) {
+  //     fetchArticles();
+  //   }
+  //   return () => {
+  //     ignore = true;
+  //   };
+  // }, []);
+
+  // const fetchArticles = () => {
+  //   const randomArr = getRandomNumbers();
+  //   setarticles((prevArticles) => []);
+  //   console.log(randomArr);
+  //   randomArr.forEach(async (rnum) => {
+  //     const articleData = await axios.get(
+  //       import.meta.env.VITE_BACKEND_URL + `/api/article/${rnum}`
+  //     );
+
+  //     const authorData = await axios.get(
+  //       import.meta.env.VITE_BACKEND_URL +
+  //         `/author/${articleData.data.author_id}`
+  //     );
+  //     setarticles((prevArticles) => [...prevArticles, articleData.data]);
+  //     setAuthors((prevAuthors) => [...prevAuthors, authorData.data]);
+  //   });
+  // };
+
   useEffect(() => {
-    if (!isMounted.current) {
-      isMounted.current = true;
-      fetchArticles();
-    }
-    // let ignore = false;
-    // if (!ignore) {
-    //   fetchArticles();
-    // }
-    // return () => {
-    //   ignore = true;
-    // };
+    fetchArticles();
   }, []);
 
-  const fetchArticles = () => {
-    const randomArr = getRandomNumbers();
-    setarticles((prevArticles) => []);
-    // console.log(randomArr);
-    randomArr.forEach(async (rnum) => {
-      const articleData = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + `/api/article/${rnum}`
-      );
+  function fetchArticles() {
+    axios
+      .get(import.meta.env.VITE_BACKEND_URL + `/api/articles?limit=${6}`)
+      .then((res) => {
+        console.log(res.data.data);
+        setArticles(res.data.data);
+      });
+  }
 
-      const authorData = await axios.get(
-        import.meta.env.VITE_BACKEND_URL +
-          `/author/${articleData.data.author_id}`
-      );
-      setarticles((prevArticles) => [...prevArticles, articleData.data]);
-      setAuthors((prevAuthors) => [...prevAuthors, authorData.data]);
-    });
-  };
+  // function fetchAuthor(authorId) {
+  //   axios
+  //     .get(import.meta.env.VITE_BACKEND_URL + "/author/" + authorId)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setAuthors((prevAuthors) => [...prevAuthors, res.data]);
+  //     });
+  // }
+  // const getRandomNumbers = () => {
+  //   let tempSet = new Set();
+  //   while (tempSet.size < 6) {
+  //     // 8 should be changed to 48
+  //     let value = Math.floor(Math.random() * 8 + 1);
+  //     tempSet.add(value);
+  //   }
+  //   return [...tempSet];
+  // };
 
-  const getRandomNumbers = () => {
-    let tempSet = new Set();
-    while (tempSet.size < 6) {
-      // 8 should be changed to 48
-      let value = Math.floor(Math.random() * 8 + 1);
-      tempSet.add(value);
-    }
-    return [...tempSet];
-  };
-
-  // console.log(articles);
-  // console.log(authors);
+  // console.log({ articles });
+  // console.log({ authors });
 
   return (
     <div className="bg-white">
@@ -98,9 +120,7 @@ function MostRead() {
         </div>
       </div>
       <div className="flex flex-row gap-2 w-full justify-center items-center flex-wrap">
-        {articles?.length < 6 ? (
-          <h1>Loading...</h1>
-        ) : (
+        {articles &&
           articles.map((article, index) => {
             return (
               <div
@@ -116,14 +136,15 @@ function MostRead() {
                   <p className="text-[10px] leading-[10px] font-semibold mt-2 mb-[10px] md:text-[14px]">
                     {article.title}
                   </p>
-                  <p className="text-[8px] uppercase text-[#FFC600] md:text-[12px] md:mt-7">
-                    BY {authors[index].name} , {authors[index].department}
-                  </p>
+                  {/* <p className="text-[8px] uppercase text-[#FFC600] md:text-[12px] md:mt-7">
+                    BY {authors && authors[index].name} ,{" "}
+                    {authors && authors[index].department}
+                  </p> */}
+                  <AuthorName authorId={article.author_id} />
                 </div>
               </div>
             );
-          })
-        )}
+          })}
         {/* <div className="w-[180px] flex flex-col border-2 mx-1 lg:mx-6">
           <img src={poster} className="object-fill" />
           <div className="w-full border-2 border-slate-500 rounded-b-lg bg-black text-white p-[5px]">
