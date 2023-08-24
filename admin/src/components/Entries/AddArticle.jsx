@@ -103,7 +103,7 @@ function AddArticle({ update }) {
                 type="text"
                 value={title}
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-lg text-black"
+                className="input input-bordered w-full max-w-lg text-white"
                 required={true}
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -116,7 +116,7 @@ function AddArticle({ update }) {
                 type="text"
                 value={image}
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-lg text-black"
+                className="input input-bordered w-full max-w-lg text-white"
                 required={true}
                 onChange={(e) => setImage(e.target.value)}
               />
@@ -128,7 +128,7 @@ function AddArticle({ update }) {
               Description <span className="text-red-600">*</span>
             </label>
             <textarea
-              className="textarea textarea-bordered w-full h-[250px] text-black"
+              className="textarea textarea-bordered w-full h-[250px] text-white"
               placeholder="Type Here"
               value={description}
               required={true}
@@ -153,7 +153,7 @@ function AddArticle({ update }) {
                 Tag <span className="text-red-600">*</span>
               </label>
               <select
-                className="select select-bordered w-full text-black"
+                className="select select-bordered w-full text-white"
                 value={tag}
                 onChange={(e) => {
                   setTag(e.target.value);
@@ -173,7 +173,7 @@ function AddArticle({ update }) {
                 Author <span className="text-red-600">*</span>
               </label>
               <select
-                className="select select-bordered w-full text-black"
+                className="select select-bordered w-full text-white"
                 value={author}
                 onChange={(e) => {
                   setAuthor(e.target.value);

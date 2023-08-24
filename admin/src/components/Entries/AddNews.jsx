@@ -88,14 +88,14 @@ function AddNews({ update }) {
                 type="text"
                 value={title}
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-lg text-black"
+                className="input input-bordered w-full max-w-lg text-white"
                 required={true}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
           </div>
           {/* 2 */}
-          <div className="w-full mt-[5%] text-black">
+          <div className="w-full mt-[5%] text-white">
             <label className="text-white" htmlFor="">
               Content <span className="text-red-600">*</span>
             </label>
@@ -112,7 +112,7 @@ function AddNews({ update }) {
                 Author <span className="text-red-600">*</span>
               </label>
               <select
-                className="select select-bordered w-full text-black"
+                className="select select-bordered w-full text-white"
                 value={author}
                 onChange={(e) => {
                   setAuthor(e.target.value);

@@ -18,7 +18,6 @@ function Articles() {
       isMounted.current = true;
       fetchArticles();
     }
-
   }, []);
 
   const fetchArticles = () => {
