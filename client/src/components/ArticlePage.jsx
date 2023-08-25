@@ -18,8 +18,8 @@ import Blocks from "editorjs-blocks-react-renderer";
 
 import axios from "axios";
 
-import RelatedImage from "/Assets/Images/RelatedImage.svg";
-import ArticlePoster from "/Assets/Images/ArticlePoster.svg";
+// import RelatedImage from "/Assets/Images/RelatedImage.svg";
+// import ArticlePoster from "/Assets/Images/ArticlePoster.svg";
 import Editor from "./Editor";
 import DriveImage from "./DriveImage";
 
@@ -29,22 +29,24 @@ function ArticlePage({ data, author, relatedArticles }) {
     <section className="h-full bg-black">
       <div className="flex flex-col lg:flex-row w-11/12 mx-auto gap-8">
         <div className="basis-[60%] mt-[3%]">
-          <h1 className="poppins-bold text-xl text-white">29, March 2023</h1>
+          <h1 className="poppins-bold text-xl text-white">
+            {data && data.createdAt.substring(0, 10)}
+          </h1>
 
-          <p className="poppins-bold text-7xl mt-[2%] text-white">
+          <p className="poppins-bold text-4xl lg:text-7xl mt-[2%] text-white">
             {data && data.title}
           </p>
           <div className="flex justify-between mt-[2%]">
             <p className=" text-white">
               By {author && author?.name} ( {author && author?.department} )
             </p>
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               icon={faHeart}
               className="text-white hover:text-red-700"
-            />
+            /> */}
           </div>
 
-          <p className="mt-[2%] poppins-regular text-2xl text-white">
+          <p className="my-5 poppins-regular text-2xl text-white">
             {data && data.description}
           </p>
           {/*  */}
