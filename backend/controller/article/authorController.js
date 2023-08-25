@@ -20,12 +20,32 @@ const addAuthor = async (req, res) => {
 
 const findAuthors = async (req, res) => {
   try {
-    const author = await Author.findAll({});
-    if (author) res.send(author);
-    else res.status(400).json("Not found");
+    const offset = parseInt(req.query.offset) || 0;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const author = await Author.findAll({
+      offset: offset,
+      limit: limit,
+    });
+
+    const meta = {
+      total: await Author.count({
+        offset: offset,
+        limit: limit,
+      }),
+      limit: limit,
+      offset: offset,
+      page: offset / limit + 1,
+    };
+
+    const output = {
+      data: author,
+      meta: meta,
+    };
+    res.send(output);
   } catch (error) {
     console.log(error);
-    res.status(400).json("Failed get the auhtor");
+    res.status(400).json("Failed get the auhtors");
   }
 };
 

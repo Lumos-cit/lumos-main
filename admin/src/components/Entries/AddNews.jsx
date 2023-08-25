@@ -67,7 +67,7 @@ function AddNews({ update }) {
   function fetchAuthors() {
     axios.get(import.meta.env.VITE_BACKEND_URL + "/author").then((res) => {
       console.log(res.data);
-      setAllAuthors(res.data);
+      setAllAuthors(res.data.data);
     });
   }
 

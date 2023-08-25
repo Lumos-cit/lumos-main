@@ -5,7 +5,7 @@ const {
   findAuthors,
   findOneAuthor,
   DeleteAuthor,
-  updateAuthor
+  updateAuthor,
 } = require("../controller/article/authorController");
 
 router.get("/", (req, res) => {
@@ -26,6 +26,10 @@ router.put("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   addAuthor(req, res);
+});
+
+router.get("/test", (req, res) => {
+  res.send("AUTHOR WORKING SUCCESSFULLY");
 });
 
 module.exports = router;

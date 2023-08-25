@@ -80,7 +80,7 @@ function AddArticle({ update }) {
   function fetchAuthors() {
     axios.get(import.meta.env.VITE_BACKEND_URL + "/author").then((res) => {
       console.log(res.data);
-      setAllAuthors(res.data);
+      setAllAuthors(res.data.data);
     });
   }
 
@@ -182,11 +182,12 @@ function AddArticle({ update }) {
                 <option disabled selected value="">
                   Select here
                 </option>
-                {allAuthors.map((oneAuthor, i) => (
-                  <option key={i} value={oneAuthor.author_id}>
-                    {oneAuthor.name} - {oneAuthor.department}
-                  </option>
-                ))}
+                {allAuthors.length &&
+                  allAuthors.map((oneAuthor, i) => (
+                    <option key={i} value={oneAuthor.author_id}>
+                      {oneAuthor.name} - {oneAuthor.department}
+                    </option>
+                  ))}
               </select>
             </div>
           </div>

@@ -5,6 +5,7 @@ import Existing from "./Entries/Existing";
 import { useSelector } from "react-redux";
 import AddArticle from "./Entries/AddArticle";
 import AddNews from "./Entries/AddNews";
+import Section from "./Section";
 
 function Entry() {
   const [newEntry, setNewEntry] = useState(false);
@@ -53,11 +54,7 @@ function Entry() {
         </div>
       </div>
       {newEntry ? (
-        type == "Articles" ? (
-          <AddArticle update={update} />
-        ) : (
-          <AddNews update={update} />
-        )
+        <Section type={type} update={update} />
       ) : (
         <Existing type={type} updateEntry={updateEntry} />
       )}

@@ -40,4 +40,8 @@ router.put("/news/:id", updateNews);
 
 router.delete("/news/:id", deleteNews);
 
+router.get("/test", (req, res) => {
+  res.send("POST WORKING SUCCESSFULLY");
+});
+
 module.exports = router;

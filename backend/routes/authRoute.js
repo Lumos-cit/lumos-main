@@ -24,4 +24,8 @@ router.put("/user/:id", (req, res) => {
   updateUser(req, res, req.body);
 });
 
+router.get("/test", (req, res) => {
+  res.send("AUTH WORKING SUCCESSFULLY");
+});
+
 module.exports = router;

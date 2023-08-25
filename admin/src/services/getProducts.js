@@ -43,3 +43,24 @@ export function getNews(setData, setTotalPage, currentPage) {
       //   showToast(toast, "error", error);
     });
 }
+
+export function getAuthors(setData, setTotalPage, currentPage) {
+  const offset = limit * (currentPage - 1);
+
+  axios
+    .get(
+      import.meta.env.VITE_BACKEND_URL +
+        `/author?offset=${offset}&limit=${limit}`
+    )
+    .then((res) => {
+      console.log(res.data);
+      const totalPage = Math.ceil(res.data.meta.total / limit);
+      setTotalPage(totalPage);
+      setData(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+      const error = err.response.data.error.message;
+      //   showToast(toast, "error", error);
+    });
+}
