@@ -21,6 +21,7 @@ import axios from "axios";
 import RelatedImage from "/Assets/Images/RelatedImage.svg";
 import ArticlePoster from "/Assets/Images/ArticlePoster.svg";
 import Editor from "./Editor";
+import DriveImage from "./DriveImage";
 
 function ArticlePage({ data, author, relatedArticles }) {
   // const router = useNavigate();
@@ -83,7 +84,8 @@ function ArticlePage({ data, author, relatedArticles }) {
           {/*  */}
           <div className="p-12 flex gap-10">
             <div className="basis-[40%] ">
-              <img src={author && author.profile_pic} />
+              {/* <img src={author && author.profile_pic} /> */}
+              {author && <DriveImage url={author.profile_pic} className="" />}
             </div>
             <div className="mt-[3%] basis-[50%]">
               <h1 className="poppins-bold text-white">
@@ -95,7 +97,8 @@ function ArticlePage({ data, author, relatedArticles }) {
         </div>
         <div className="basis-[40%] ">
           <div className="flex justify-center">
-            <img src={data && data.cover_img} className="p-10" />
+            {/* <img src={data && data.cover_img} className="p-10" /> */}
+            {data && <DriveImage url={data.cover_img} className="p-10" />}
           </div>
           <div className="flex justify-center items-center">
             <button className="btn border rounded-full btn-sm mx-[1%] text-white">
@@ -137,7 +140,8 @@ function ArticlePage({ data, author, relatedArticles }) {
                       </div>
                     </div>
                     <div className="flex justify-center items-center ">
-                      <img src={relatedArticle.cover_img} className="" />
+                      {/* <img src={relatedArticle.cover_img} className="" /> */}
+                      <DriveImage url={relatedArticle.cover_img} className="" />
                     </div>
                   </div>
                 </div>

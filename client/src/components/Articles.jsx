@@ -7,6 +7,7 @@ import ink from "/Assets/Images/ink.svg";
 import poster from "/Assets/Images/poster.svg";
 import NotJustArticles from "../SvgComponents/NotJustArticles";
 import AuthorName from "./AuthorName";
+import DriveImage from "./DriveImage";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -142,7 +143,8 @@ function Articles() {
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
-                <img src={article.cover_img} className="object-fill" />
+                {/* <img src={article.cover_img} className="object-fill" /> */}
+                <DriveImage url={article.cover_img} className="object-fill" />
                 <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] md:min-h-[100px]">
                   <p className="text-[8px] w-full flex justify-end md:text-[10px]">
                     {article.createdAt.substring(0, 10)}

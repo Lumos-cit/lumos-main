@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import DriveImage from "../components/DriveImage";
 
 function SectionFlex({ images, buttons, articles }) {
   const router = useNavigate();
@@ -12,7 +13,8 @@ function SectionFlex({ images, buttons, articles }) {
           key={index}
           onClick={() => router("/article/" + article.article_id)}
         >
-          <img src={article.cover_img} alt="" />
+          {/* <img src={article.cover_img} alt="" /> */}
+          <DriveImage url={article.cover_img} className="" />
           <div className="bg-[#D9D9D9] w-[250px] lg:w-[360px] p-1 cursor-pointer">
             <div className="flex justify-between items-center">
               <button className="p-1 border border-solid border-black text-black m-2">

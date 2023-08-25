@@ -45,45 +45,7 @@ function StudentHQ() {
       });
   }
 
-  // const Text1 = [
-  //   "The Five Most Critical Financial Pitfalls to Avoid",
-  //   "The Five Most Critical Financial Pitfalls to Avoid",
-  //   "The Five Most Critical Financial Pitfalls to Avoid",
-  // ];
-  // const Button1 = ["studentHQ", "studentHQ", "studentHQ"];
-  // const Date1 = ["23, March 2023", "23, March 2023", "23, March 2023"];
-  // const Author1 = [
-  //   "By VIJAY KP , EEE-24",
-  //   "By VIJAY KP , EEE-24",
-  //   "By VIJAY KP , EEE-24",
-  // ];
-
   return (
-    // <div>
-    //    <SectionHead head={head} body={body} />
-
-    //     <SectionFlex
-    //       images={Image1}
-    //       texts={Text1}
-    //       buttons={Button1}
-    //       dates={Date1}
-    //       authors={Author1}
-    //     />
-    //     <SectionFlex
-    //       images={Image2}
-    //       texts={Text1}
-    //       buttons={Button1}
-    //       dates={Date1}
-    //       authors={Author1}
-    //     />
-    //     <SectionFlex
-    //       images={Image3}
-    //       texts={Text1}
-    //       buttons={Button1}
-    //       dates={Date1}
-    //       authors={Author1}
-    //     />
-    // </div>
     <div>
       <SectionHead head={head} body={body} />
       <div className="">
