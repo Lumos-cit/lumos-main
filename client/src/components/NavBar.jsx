@@ -2,7 +2,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import logo from "/Assets/Images/logoYellow.svg";
+import logo from "/assets/Images/logoYellow.svg";
 import { useNavigate, Link } from "react-router-dom";
 
 function NavBar() {
@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <div className="bg-[#0C0C0C] flex justify-between p-2 z-50 relative ">
       <div className="basis-1/4">
-        <div className="drawer lg:hidden">
+        <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
             <label
@@ -85,13 +85,6 @@ function NavBar() {
               {/* <li>
               <Link className="text-black poppins-regular text-xl ml-2 hover:text-black"> Campus Life</Link>
               </li> */}
-              {/* <hr />
-              <li>
-                <Link className="text-black poppins-regular text-lg hover:text-black">
-                  {" "}
-                  Featured
-                </Link>
-              </li> */}
               <hr />
               <li>
                 <Link
@@ -111,6 +104,17 @@ function NavBar() {
                   {" "}
                   CampusLife
                 </Link>
+              </li>
+              <hr />
+              <li>
+                <a
+                  className="text-black poppins-regular text-sm lg:text-xl ml-2 hover:text-black"
+                  href="https://lumos-web-sigma.vercel.app/"
+                  target="_blank"
+                >
+                  {" "}
+                  Register Now
+                </a>
               </li>
               <hr />
               {/* <li>

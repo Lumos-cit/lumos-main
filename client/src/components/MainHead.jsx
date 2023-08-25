@@ -61,7 +61,7 @@ function MainHead() {
                 className="article-card bg-black  "
               >
                 <div className=" bg-black w-full  ">
-                  <div className="flex w-[80%] h-[25rem] justify-between mx-auto">
+                  <div className="flex w-[90%] h-[25rem] gap-10 justify-between mx-auto">
                     <div className="flex items-start text-white lg:w-1/3 lg:p-4 md:w-1/3 ">
                       <DriveImage
                         url={card.cover_img}
@@ -143,40 +143,76 @@ function MainHead() {
           onSlideChange={() => console.log("slide change")}
         >
           {cards &&
-            cards.map((card) => (
-              <SwiperSlide
-                key={card.article_id}
-                className="article-card bg-black  "
-              >
-                <div className="bg-black w-full ">
-                  <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto">
-                    <div className="w-full">
-                      <p className="text-yellow-500 font-bold text-2xl">
-                        {card.title}
-                      </p>
-                      <p className="font-semibold text-xl  text-white">
-                        {card.description}
-                      </p>
-                      <p className="scroll-content font-italic text-sm text-white ">
-                        {card.content.substring(0, 40)}
-                        <Link
-                          to={`/article/${card.article_id}`}
-                          className="text-yellow-500 ml-[1rem]"
-                        >
-                          Continue Reading......
-                        </Link>
-                      </p>
+            cards.map((card) => {
+              return (
+                <SwiperSlide
+                  key={card.article_id}
+                  className="article-card bg-black  "
+                >
+                  <div className="bg-black w-full ">
+                    <div className="flex w-[80%] justify-center mx-auto mt-[2rem]">
+                      <DriveImage
+                        url={card.cover_img}
+                        className="h-[100%] w-full mb-10"
+                      />
+                    </div>
+                    <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto">
+                      <div className="w-full">
+                        <p className="text-yellow-500 font-bold text-2xl">
+                          {card.title}
+                        </p>
+                        <p className="font-semibold text-xl  text-white">
+                          {card.description}
+                        </p>
+                        <p className="scroll-content font-italic text-sm text-white ">
+                          {card && (
+                            <Blocks
+                              data={JSON.parse(card.content)}
+                              config={{
+                                embed: {
+                                  className: "border-0",
+                                },
+                                header: {
+                                  className: "font-bold",
+                                },
+                                image: {
+                                  className: "w-full max-w-screen-md",
+                                  actionsClassNames: {
+                                    stretched: "w-full h-80 object-cover",
+                                    withBorder: "border border-2",
+                                    withBackground: "p-2",
+                                  },
+                                },
+                                list: {
+                                  className: "list-inside",
+                                },
+                                paragraph: {
+                                  className:
+                                    "text-white poppins-regular leading-relaxed",
+                                  actionsClassNames: {
+                                    alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
+                                  },
+                                },
+                                quote: {
+                                  className: "py-3 px-5 italic font-serif",
+                                },
+                              }}
+                            />
+                          )}
+                          {/* {card.content.substring(0, 40)} */}
+                          <Link
+                            to={`/article/${card.article_id}`}
+                            className="text-yellow-500 ml-[1rem]"
+                          >
+                            Continue Reading......
+                          </Link>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex w-[20%] h-[20%] justify-center mx-auto mt-[2rem]">
-                    <DriveImage
-                      url={card.cover_img}
-                      className="h-[50%] w-full mb-10"
-                    />
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </div>
     </>
