@@ -184,9 +184,11 @@ function NavBar() {
       </div>
       <div className="basis-1/4">
         <div className="flex justify-end items-end">
-          <button className="btn btn-outline btn-warning btn-sm mr-4 hidden lg:block">
-            Sign In
-          </button>
+          <a href="https://lumos-web-sigma.vercel.app/" target="_blank">
+            <button className="btn btn-outline btn-warning btn-sm mr-4 hidden lg:block">
+              Register Now
+            </button>
+          </a>
         </div>
       </div>
     </div>

@@ -26,7 +26,8 @@ const News1 = () => {
     axios
       .get(import.meta.env.VITE_BACKEND_URL + '/author')
       .then((res) => {
-        setAuthors(res.data);
+        console.log(res.data);
+        setAuthors(res.data.data);
       });
   }
 
