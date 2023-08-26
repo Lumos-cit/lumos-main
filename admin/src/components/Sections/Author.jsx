@@ -22,7 +22,7 @@ function Author({ updateEntry }) {
     getAuthors(setData, setTotalPage, val);
   }
   return (
-    <div className="w-full mx-auto mt-5 pb-5 bg-slate-900 p-5 h-[90vh] rounded-2xl flex flex-col justify-between">
+    <div className="w-full mx-auto mt-5 pb-5 bg-slate-900 p-5 h-[90vh] rounded-2xl flex flex-col justify-between  overflow-y-scroll">
       <table className="w-full table-auto">
         <thead>
           <tr>
