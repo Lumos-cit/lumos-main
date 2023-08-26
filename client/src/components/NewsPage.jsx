@@ -40,7 +40,7 @@ function NewsPage() {
           {newsData.createdAt.slice(0, 10)}
         </h1>
         <br></br>
-        <h1 className="poppins-bold text-[50px] lg:text-[100px] text-white">
+        <h1 className="poppins-bold text-2xl lg:text-4xl text-white">
           {newsData.title}
         </h1>
         <br></br>
@@ -79,7 +79,7 @@ function NewsPage() {
             />
           )}
         </p>
-        <div className="author-details text-white flex lg:flex-cols py-[5%] md:flex-row">
+        <div className="author-details text-white flex flex-col lg:flex-row py-[5%] md:flex-row">
           <div className="">
             {/* <img
               src={authorData.profile_pic}

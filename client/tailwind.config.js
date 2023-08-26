@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'main-lg' : "url('/Assets/Images/MainHead.jpg')",
+        'banner' : "url('assets/banner.svg')",
+
       },
       backgroundColor:{
         'custom-1': "#F8F301",
@@ -16,3 +17,4 @@ export default {
   plugins: [require("daisyui")],
 
 };
+
