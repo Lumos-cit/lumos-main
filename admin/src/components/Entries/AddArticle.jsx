@@ -78,10 +78,12 @@ function AddArticle({ update }) {
   }, []);
 
   function fetchAuthors() {
-    axios.get(import.meta.env.VITE_BACKEND_URL + "/author").then((res) => {
-      console.log(res.data);
-      setAllAuthors(res.data.data);
-    });
+    axios
+      .get(import.meta.env.VITE_BACKEND_URL + "/author?limit=100")
+      .then((res) => {
+        console.log(res.data);
+        setAllAuthors(res.data.data);
+      });
   }
 
   return (

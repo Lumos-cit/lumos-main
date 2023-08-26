@@ -91,7 +91,7 @@ function NewsSelection({ item, updateEntry, index, currentPage }) {
   const limit = 10;
 
   return (
-    <tr key={item.id} className="text-center">
+    <tr key={item.id} className="text-center text-white">
       <td className="border-t border-gray-200 py-2">
         {index + (currentPage - 1) * limit}
       </td>
