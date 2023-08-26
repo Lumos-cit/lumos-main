@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import pic from "/Assets/Images/caropic.svg";
+// import pic from "/Assets/Images/caropic.svg";
 
 // Import Swiper styles
 import "swiper/css";

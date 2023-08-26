@@ -67,7 +67,7 @@ function MainHead() {
               >
                 <div className=" bg-black w-full  ">
                   <div className="flex w-[90%] h-[30rem] gap-10 justify-between mx-auto">
-                    <div className="flex items-start text-white lg:w-[45%] lg:p-10 lg:h-[95%] md:w-1/3 ">
+                    <div className="flex items-start text-white lg:w-[40%] lg:p-10 lg:h-[95%] md:w-1/3 ">
                       <DriveImage
                         url={card.cover_img}
                         className="h-full w-full rounded-lg"
@@ -170,7 +170,7 @@ function DisplayContent({ data, screenSize }) {
   const maxChars = screenSize === 'lg' ? 350 : 350;
   const slicedText = data.blocks[0].data.text.substring(0, maxChars).replace(/<\/?[^>]+(>|$)/g, "");
 
-  return <h1 className="poppins-regular text-sm">{slicedText}...</h1>;
+  return <h1 className="poppins-regular text-md">{slicedText}...</h1>;
 }
 
 export default MainHead;

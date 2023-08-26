@@ -1,20 +1,18 @@
 import React from "react";
-import JoinusToday from "../SvgComponents/JoinusToday";
-import Pic from "../SvgComponents/Pic";
-import OneBigFamily from "../SvgComponents/OneBigFamily";
+// import JoinusToday from "../SvgComponents/JoinusToday";
+// import Pic from "../SvgComponents/Pic";
+// import OneBigFamily from "../SvgComponents/OneBigFamily";
+import joinusfamily from "../assets/joinusfamily.svg"
+import JoinUsFamily from "../SvgComponents/JoinUsFamily";
 
 function JoinUs() {
   return (
     <div className="bg-white h-full">
-      <JoinusToday />
-      <Pic />
-      {/* <h1 className="ibm-bold text-[#FFE500] text-4xl lg:text-[300px]  text-center leading-none tracking-[40px] ">
-        FAMILY
-      </h1> */}
-      <OneBigFamily />
-      <div className="flex justify-center p-3">
+    
+      <JoinUsFamily />
+      <div className="flex justify-center py-5">
           <a href="https://docs.google.com/forms/d/1APkSqSswelrWUyce49rvuQSe2wE402wb2yHycaDkACE/edit  " target='blank'>
-            <button className=" border-[#dbd846] border-2  bg-yellow-400  text-black  font-semibold ">
+            <button className=" btn btn-outline border-[#E9BC21] border-1  text-[#E9BC21] font-semibold hover:bg-[#E9BC21] hover:text-black">
             JOIN NOW
           </button>
 

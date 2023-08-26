@@ -19,6 +19,10 @@
   src: url('/fonts/IBMPlexSans-Bold.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/fonts/IBMPlexSans-Bold.ttf') format('truetype');
+}
+@font-face {
   font-family: 'CustomFont5';
   src: url('/fonts/IBMPlexSans-Italic.ttf') format('truetype');
 }
