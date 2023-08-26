@@ -118,14 +118,14 @@ function MainHead() {
                   key={card.article_id}
                   className="article-card bg-black   flex items-center justify-center"
                 >
-                  <div className="bg-black w-full h-[23rem]  ">
+                  <div className="bg-black w-full h-[30rem]  ">
                     <div className="flex w-[80%] justify-center mx-auto mt-[2rem]">
                       <DriveImage
                         url={card.cover_img}
-                        className="h-[40%] w-[40%] "
+                        className="h-[40%] w-[75%] "
                       />
                     </div>
-                    <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto p-3">
+                    <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto p-3  ">
                       <div className="w-full py-2">
                         <p className= " card-title text-yellow-400 uppercase font-bold text-lg text-center mb-3">
                           {card.title}
