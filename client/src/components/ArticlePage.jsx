@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
+// import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
@@ -103,13 +103,13 @@ function ArticlePage({ data, author, relatedArticles }) {
             {data && <DriveImage url={data.cover_img} className="p-10" />}
           </div>
           <div className="flex justify-center items-center">
-            <button className="btn border rounded-full btn-sm mx-[1%] text-white">
+            <button className="btn border rounded-full btn-sm mx-[1%] btn-outline  text-yellow-500">
               StudentHQ
             </button>
-            <button className="btn border rounded-full btn-sm mx-[1%] text-white">
+            <button className="btn border rounded-full btn-sm mx-[1%] btn-outline text-yellow-500">
               Spring Edition
             </button>
-            <button className="btn border rounded-full btn-sm mx-[1%] text-white">
+            <button className="btn border rounded-full btn-sm mx-[1%] btn-outline text-yellow-500">
               Finance
             </button>
           </div>
@@ -214,18 +214,18 @@ function ArticlePage({ data, author, relatedArticles }) {
               <FontAwesomeIcon
                 icon={faFacebook}
                 size="2x"
-                className="px-[2%]"
+                className="px-[2%]  text-white"
               />
-              <FontAwesomeIcon icon={faTwitter} size="2x" className="px-[2%]" />
+              <FontAwesomeIcon icon={faTwitter} size="2x" className="px-[2%]  text-white" />
               <FontAwesomeIcon
                 icon={faLinkedin}
                 size="2x"
-                className="px-[2%]"
+                className="px-[2%] text-white"
               />
               <FontAwesomeIcon
                 icon={faWhatsapp}
                 size="2x"
-                className="px-[2%]"
+                className="px-[2%] text-white"
               />
             </div>
           </div>

@@ -3,8 +3,7 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import ink from "/assets/Images/ink.svg";
-import poster from "/assets/Images/poster.svg";
+//import poster from "/assets/Images/poster.svg";
 import NotJustArticles from "../SvgComponents/NotJustArticles";
 import AuthorName from "./AuthorName";
 import DriveImage from "./DriveImage";
@@ -50,14 +49,14 @@ function Articles() {
     <div className="relative bg-white h-full pt-[10%] lg:pt-2">
       <NotJustArticles />
 
-      <h1 className="text-3xl lg:text-[120px] ibm-bold text-[#FFE68F] tracking-widest leading-none text-center pt-5">
-        Emotions Captured
+      <h1 className="text-3xl lg:text-8xl ibm-bold  text-yellow-500  tracking-widest leading-none text-center pt-5">
+        Moments Captured
       </h1>
 
       <div className="flex justify-center lg:justify-between mt-[5%] lg:mt-10 w-5/6 mx-auto flex-wrap">
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2 text-yellow-500 btn-wide lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("xplore");
               fetchArticles();
@@ -68,7 +67,7 @@ function Articles() {
         </div>
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("campusLife");
               fetchArticles();
@@ -79,7 +78,7 @@ function Articles() {
         </div>
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("studentHq");
               fetchArticles();
@@ -90,7 +89,7 @@ function Articles() {
         </div>
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("career");
               fetchArticles();
@@ -121,7 +120,7 @@ function Articles() {
           articles.map((article, index) => {
             return (
               <div
-                className="w-[180px] flex flex-col cursor-pointer mx-1 md:w-[240px] lg:mx-6"
+                className="w-[15rem]  flex flex-col cursor-pointer mx-1 my-3 md:w-[20rem]  lg:mx-2"
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >

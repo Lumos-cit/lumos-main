@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import logo from "/assets/Images/logoYellow.svg";
+import logo from "../assets/logoYellow.svg";
 import { useNavigate, Link } from "react-router-dom";
 
 function NavBar() {

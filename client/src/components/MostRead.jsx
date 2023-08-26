@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import book from "/assets/Images/book.svg";
+import book from "../assets/book.svg";
 // import poster from "/Assets/Images/poster.svg";
 // import carrer1 from "/Assets/Images/Career1.svg";
 // import carrer2 from "/Assets/Images/Career2.svg";
@@ -125,7 +125,7 @@ function MostRead() {
           articles.map((article, index) => {
             return (
               <div
-                className="w-[180px] flex flex-col cursor-pointer mx-1 md:w-[240px] lg:mx-6"
+                className="w-[15rem]  flex flex-col cursor-pointer mx-1 my-3 md:w-[20rem]  lg:mx-2"
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >

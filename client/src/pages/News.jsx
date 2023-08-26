@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SectionHead from "../Components/SectionHead";
 import SectionFlex from "../Components/SectionFlex";
-import NewsFlex from "../Components/NewsFlex";
-import News1 from "/Assets/Images/News1.svg";
-import News2 from "/Assets/Images/News2.svg";
-import News3 from "/Assets/Images/News3.svg";
-import News4 from "/Assets/Images/News4.svg";
-import News5 from "/Assets/Images/News5.svg";
+import NewsFlex from "../components/NewsFlex";
+// import News1 from "/Assets/Images/News1.svg";
+// import News2 from "/Assets/Images/News2.svg";
+// import News3 from "/Assets/Images/News3.svg";
+// import News4 from "/Assets/Images/News4.svg";
+// import News5 from "/Assets/Images/News5.svg";
 
 function News() {
   const head = "NEWS";

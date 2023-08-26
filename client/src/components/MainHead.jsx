@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Blocks from "editorjs-blocks-react-renderer";
+// import Blocks from "editorjs-blocks-react-renderer";
 
-import SectionHead from "../Components/SectionHead";
-import SectionFlex from "../Components/SectionFlex";
+// import SectionHead from "../Components/SectionHead";
+// import SectionFlex from "../Components/SectionFlex";
 import {
   Navigation,
   Pagination,
@@ -47,10 +47,15 @@ function MainHead() {
           spaceBetween={50}
           slidesPerView={1}
           navigation
-          pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => {
             // console.log(swiper);
+          }}
+          pagination={{
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '" style="background-color: white;"></span>';
+            },
           }}
           onSlideChange={() => console.log("slide change")}
         >
@@ -58,11 +63,11 @@ function MainHead() {
             cards.map((card) => (
               <SwiperSlide
                 key={card.article_id}
-                className="article-card bg-black  "
+                className="article-card bg-black flex items-center justify-center  "
               >
                 <div className=" bg-black w-full  ">
                   <div className="flex w-[90%] h-[30rem] gap-10 justify-between mx-auto">
-                    <div className="flex items-start text-white lg:w-[40%] lg:p-10 lg:h-[90%] md:w-1/3 ">
+                    <div className="flex items-start text-white lg:w-[45%] lg:p-10 lg:h-[95%] md:w-1/3 ">
                       <DriveImage
                         url={card.cover_img}
                         className="h-full w-full rounded-lg"
@@ -104,8 +109,12 @@ function MainHead() {
           spaceBetween={50}
           slidesPerView={1}
           navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
+          pagination={{
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '" style="background-color: white;"></span>';
+            },
+          }}          scrollbar={{ draggable: true }}
           onSwiper={(swiper) => {
             // console.log(swiper);
           }}
@@ -116,9 +125,9 @@ function MainHead() {
               return (
                 <SwiperSlide
                   key={card.article_id}
-                  className="article-card bg-black   flex items-center justify-center"
+                  className="article-card bg-black   flex items-stretch justify-center"
                 >
-                  <div className="bg-black w-full h-[30rem]  ">
+                  <div className="bg-black w-full h-[500px]  ">
                     <div className="flex w-[80%] justify-center mx-auto mt-[2rem]">
                       <DriveImage
                         url={card.cover_img}
@@ -159,7 +168,7 @@ function MainHead() {
 
 function DisplayContent({ data, screenSize }) {
   const maxChars = screenSize === 'lg' ? 350 : 350;
-  const slicedText = data.blocks[0].data.text.substring(0, maxChars);
+  const slicedText = data.blocks[0].data.text.substring(0, maxChars).replace(/<\/?[^>]+(>|$)/g, "");
 
   return <h1 className="poppins-regular text-sm">{slicedText}...</h1>;
 }

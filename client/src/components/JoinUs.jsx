@@ -13,9 +13,14 @@ function JoinUs() {
       </h1> */}
       <OneBigFamily />
       <div className="flex justify-center p-3">
-        <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] ">
-          JOIN NOW
-        </button>
+          <a href="https://docs.google.com/forms/d/1APkSqSswelrWUyce49rvuQSe2wE402wb2yHycaDkACE/edit  " target='blank'>
+            <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] ">
+            JOIN NOW
+          </button>
+
+
+          </a>
+      
       </div>
     </div>
   );
