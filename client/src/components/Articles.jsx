@@ -25,7 +25,7 @@ function Articles() {
   function fetchArticles() {
     axios
       .get(
-        import.meta.env.VITE_BACKEND_URL + `/api/articles?tag=${tag}&limit=${6}`
+        import.meta.env.VITE_BACKEND_URL + `/api/articles?tag=${tag}&limit=${5}`
       )
       .then((res) => {
         // console.log(res.data.data);
@@ -120,17 +120,17 @@ function Articles() {
           articles.map((article, index) => {
             return (
               <div
-                className="w-[15rem]  flex flex-col cursor-pointer mx-1 my-3 md:w-[20rem]  lg:mx-2"
+                className="w-[8rem]  flex flex-col cursor-pointer mx-1 my-3 md:w-[15rem]  lg:mx-2"
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
                 {/* <img src={article.cover_img} className="object-fill" /> */}
                 <DriveImage url={article.cover_img} className="object-fill" />
-                <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] md:min-h-[100px]">
+                <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] h-[150px] flex flex-col justify-center items-start">
                   <p className="text-[8px] w-full flex justify-end md:text-[10px]">
                     {article.createdAt.substring(0, 10)}
                   </p>
-                  <p className="text-[10px] leading-[10px] font-semibold mt-2 mb-[10px] md:text-[14px]">
+                  <p className="text-[10px] leading-5 font-semibold mt-2 mb-[10px] md:text-[14px]">
                     {article.title}
                   </p>
                   {/* <p className="text-[8px] uppercase text-[#FFC600] md:text-[12px] md:mt-7">
