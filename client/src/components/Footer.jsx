@@ -64,8 +64,7 @@ function Footer() {
         <div className="flex flex-col justify-center items-center w-full  bg-yellow-400  ">
           <img src={logo} className="p-5" />
           <Link to='/about' className=" text-black">About Us</Link>     
-          <a href="mailto:lumos@citchennai.net" className="hover:cursor-pointer"  >Contact Us          </a>
-
+          <a href="mailto:lumos@citchennai.net" className="hover:cursor-pointer text-black">Contact Us</a>
 
           <div className="flex justify-between w-1/2 mt-3">
             <a href="https://www.instagram.com/lumos_cit/">
@@ -76,7 +75,7 @@ function Footer() {
               />
 
             </a>
-            <a href="            https://www.linkedin.com/company/lumos-magazine/mycompany/?viewAsMember=true ">
+            <a href="https://www.linkedin.com/company/lumos-magazine/mycompany/?viewAsMember=true ">
               <FontAwesomeIcon
                 icon={faLinkedin}
                 className="text-black"
