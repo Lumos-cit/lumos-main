@@ -42,29 +42,31 @@ const News1 = () => {
       <p className="text-[#FFC600] text-[48px] text-center ibm-bold leading-none">
         Stay Updated
       </p>
-      <div className="px-[15%] py-[5%] h-[100vh] grid grid-cols-2 grid-rows-2 gap-8 ">
-        {news.map((item, index) => (
-          <div
-            key={index}
-            onClick={() => navigate(`/news/${item.news_id}`)} 
-            style={{ cursor: 'pointer' }} 
-            className={`news-card-${index % 4}`}
-          >
-            <div className="px-[10%] py-[10%]">
-              <p className="ibm-bold text-2xl text-black">{item.createdAt.slice(0, 10)}</p>
-              <p className="ibm-bold text-xl text-white">{item.title}</p>
-              {authors.map((author) =>
-                author.author_id === item.author_id ? (
-                  <div key={author.author_id} className="">
-                    <p className="absolute bottom-10 left-12 text-xl ibm-italic text-white">{author.name}</p>
-                  </div>
-                ) : null
-              )}
+      <div className="px-[15%] py-[5%] h-[150vh] md:h-[80rem] flex flex-wrap gap-8 md:flex-col">
+  {news.map((item, index) => (
+    <div
+      key={index}
+      onClick={() => navigate(`/news/${item.news_id}`)} 
+      style={{ cursor: 'pointer' }} 
+      className={`news-card-${index % 4} flex-grow`}
+    >
+      <div className="px-[10%] py-[10%]">
+        <p className="ibm-bold text-2xl text-black">{item.createdAt.slice(0, 10)}</p>
+        <p className="ibm-bold text-xl text-white">{item.title.slice(0, 40)}....</p>
+        {authors.map((author) =>
+          author.author_id === item.author_id ? (
+            <div key={author.author_id} className="">
+              <p className="mt-2 text-xl ibm-italic text-white">{author.name}</p>
             </div>
-          </div>
-        ))}
+          ) : null
+        )}
       </div>
-      <div className="h-[30%] w-full  relative  rounded-2xl flex justify-center items-center">
+    </div>
+  ))}
+
+</div>
+
+       <div className="h-[4rem] w-full  relative  rounded-2xl flex justify-center items-center">
         <div>
           <button
             className="border-[#D4A400] btn btn-outline text-[#D4A400] hover:bg-custom-2 hover:text-white mb-[15%]"
@@ -73,7 +75,7 @@ const News1 = () => {
             Discover More NEWS
           </button>
         </div>
-      </div>
+      </div> 
     </div>
     </>
   );
