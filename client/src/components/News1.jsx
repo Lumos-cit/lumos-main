@@ -42,29 +42,36 @@ const News1 = () => {
       <p className="text-[#FFC600] text-[48px] text-center ibm-bold leading-none">
         Stay Updated
       </p>
-      <div className="px-[15%] py-[5%] h-[150vh] md:h-[80rem] flex flex-wrap gap-8 md:flex-col">
+      <div className="px-[15%] py-[5%] md:h-[80rem] grid gap-4 md:flex-col lg:grid-cols-2 lg:grid-rows-2">
   {news.map((item, index) => (
     <div
       key={index}
       onClick={() => navigate(`/news/${item.news_id}`)} 
       style={{ cursor: 'pointer' }} 
-      className={`news-card-${index % 4} flex-grow`}
+      className={`news-card-${index % 4} flex-grow lg:h-80`}
     >
       <div className="px-[10%] py-[10%]">
         <p className="ibm-bold text-2xl text-black">{item.createdAt.slice(0, 10)}</p>
-        <p className="ibm-bold text-xl text-white">{item.title.slice(0, 40)}....</p>
+        {item.title.length > (window.innerWidth >= 1024 ? 30 : 50) ? (
+          <p className="ibm-bold text-xl text-black">
+            {item.title.slice(0, window.innerWidth >= 1024 ? 100 : 40)}....
+          </p>
+        ) : (
+          <p className="ibm-bold text-xl text-black">{item.title}</p>
+        )}        
         {authors.map((author) =>
           author.author_id === item.author_id ? (
-            <div key={author.author_id} className="">
-              <p className="mt-2 text-xl ibm-italic text-white">{author.name}</p>
+            <div key={author.author_id} className="absolute lg:bottom-5 md:bottom-0">
+              <p className="text-xl ibm-italic text-black ] ">{author.name}</p>
             </div>
           ) : null
         )}
       </div>
     </div>
   ))}
-
 </div>
+
+
 
        <div className="h-[4rem] w-full  relative  rounded-2xl flex justify-center items-center">
         <div>
