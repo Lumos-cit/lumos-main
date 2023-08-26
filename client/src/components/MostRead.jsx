@@ -120,27 +120,49 @@ function MostRead() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row gap-2 w-full justify-center items-center flex-wrap">
+      <div className="flex flex-row px-1 py-3 gap-2 md:gap-[2rem] w-full justify-center flex-wrap">
         {articles &&
           articles.map((article, index) => {
             return (
               <div
-                className="w-[8rem]  flex flex-col cursor-pointer mx-1 my-3 md:w-[15rem]  lg:mx-2"
+                className="flex flex-col cursor-pointer"
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
-            
-                <DriveImage url={article.cover_img} className="object-fill" />
-                <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] h-[150px] flex flex-col justify-center items-start">
+                <div className="card card-compact w-[11rem] md:w-[17rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+                  <figure className="">
+                    {/* <img
+                      src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                      alt="Shoes"
+                    /> */}
+                    <DriveImage
+                      url={article.cover_img}
+                      className="object-cover aspect-square"
+                    />
+                  </figure>
+                  <div className="flex flex-col w-[100%] gap-5 p-3">
+                    <h2 className="text-[10px] flex justify-between items-center">
+                      <button className="tag text-yellow-500 border-[1px] p-1 border-yellow-500 px-3 rounded-md">
+                        {article.tag}
+                      </button>
+                      {article.createdAt.substring(0, 10)}
+                    </h2>
+                    <p className="text-[12px] font-bold">{article.title}</p>
+                    <div className="card-actions justify-start">
+                      {/* <button className="btn btn-primary">Buy Now</button> */}
+                      <AuthorName authorId={article.author_id} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] h-[150px] flex flex-col justify-center items-start">
                   <p className="text-[8px] w-full flex justify-end md:text-[10px]">
                     {article.createdAt.substring(0, 10)}
                   </p>
                   <p className="text-[10px] leading-5 [10px] flex justify-start font-semibold  mt-2 mb-[10px] md:text-[14px]">
                     {article.title}
                   </p>
-                 
-                  <AuthorName authorId={article.author_id}  />
-                </div>
+                </div> */}
               </div>
             );
           })}

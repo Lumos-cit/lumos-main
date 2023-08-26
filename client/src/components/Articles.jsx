@@ -114,31 +114,87 @@ function Articles() {
         possible are shattered.
       </p>
 
-      <div className="flex flex-row w-full gap-3 items-center justify-center flex-wrap my-5">
+      <div className="flex flex-row px-1 py-3 gap-2 md:gap-[2rem] w-full justify-center flex-wrap">
         {articles &&
           authors &&
           articles.map((article, index) => {
             return (
+              // <div
+              //   className="flex flex-col cursor-pointer"
+              //   key={article.article_id}
+              //   onClick={() => navigate("/article/" + article.article_id)}
+              // >
+              //   <div className="card card-compact w-[11rem] md:w-[17rem]  bg-base-100 shadow-xl h-[22rem] md:h-[25rem]">
+              //     <figure className="h-[60%]">
+              //       {/* <img
+              //         src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+              //         alt="Shoes"
+              //       /> */}
+              //       <DriveImage
+              //         url={article.cover_img}
+              //         className="object-fill"
+              //       />
+              //     </figure>
+              //     <div className="flex flex-col gap-7 p-3">
+              //       <h2 className="text-sm md:text-lg">
+              //         {article.createdAt.substring(0, 10)}
+              //       </h2>
+              //       <p className="text-[12px]">{article.title}</p>
+              //       <div className="card-actions justify-start">
+              //         {/* <button className="btn btn-primary">Buy Now</button> */}
+              //         <AuthorName authorId={article.author_id} />
+              //       </div>
+              //     </div>
+              //   </div>
+
+              //   {/* <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] h-[150px] flex flex-col justify-center items-start">
+              //     <p className="text-[8px] w-full flex justify-end md:text-[10px]">
+              //       {article.createdAt.substring(0, 10)}
+              //     </p>
+              //     <p className="text-[10px] leading-5 [10px] flex justify-start font-semibold  mt-2 mb-[10px] md:text-[14px]">
+              //       {article.title}
+              //     </p>
+              //   </div> */}
+              // </div>
               <div
-                className="w-[8rem]  flex flex-col cursor-pointer mx-1 my-3 md:w-[15rem]  lg:mx-2"
+                className="flex flex-col cursor-pointer"
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
-                {/* <img src={article.cover_img} className="object-fill" /> */}
-                <DriveImage url={article.cover_img} className="object-fill" />
-                <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] h-[150px] flex flex-col justify-center items-start">
+                <div className="card card-compact w-[11rem] md:w-[17rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+                  <figure className="">
+                    {/* <img
+                      src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                      alt="Shoes"
+                    /> */}
+                    <DriveImage
+                      url={article.cover_img}
+                      className="object-cover aspect-square"
+                    />
+                  </figure>
+                  <div className="flex flex-col w-[100%] gap-5 p-3">
+                    <h2 className="text-[10px] flex justify-between items-center">
+                      <button className="tag text-yellow-500 border-[1px] p-1 border-yellow-500 px-3 rounded-md">
+                        {article.tag}
+                      </button>
+                      {article.createdAt.substring(0, 10)}
+                    </h2>
+                    <p className="text-[12px] font-bold">{article.title}</p>
+                    <div className="card-actions justify-start">
+                      {/* <button className="btn btn-primary">Buy Now</button> */}
+                      <AuthorName authorId={article.author_id} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* <div className="w-full rounded-b-lg bg-black text-white pt-2 p-[12px] h-[150px] flex flex-col justify-center items-start">
                   <p className="text-[8px] w-full flex justify-end md:text-[10px]">
                     {article.createdAt.substring(0, 10)}
                   </p>
-                  <p className="text-[10px] leading-5 font-semibold mt-2 mb-[10px] md:text-[14px]">
+                  <p className="text-[10px] leading-5 [10px] flex justify-start font-semibold  mt-2 mb-[10px] md:text-[14px]">
                     {article.title}
                   </p>
-                  {/* <p className="text-[8px] uppercase text-[#FFC600] md:text-[12px] md:mt-7">
-                    BY {authors && authors[index].name} ,{" "}
-                    {authors && authors[index].department}
-                  </p> */}
-                  <AuthorName authorId={article.author_id} />
-                </div>
+                </div> */}
               </div>
             );
           })}
