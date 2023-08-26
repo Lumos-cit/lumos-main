@@ -61,19 +61,19 @@ function MainHead() {
                 className="article-card bg-black  "
               >
                 <div className=" bg-black w-full  ">
-                  <div className="flex w-[90%] h-[25rem] gap-10 justify-between mx-auto">
-                    <div className="flex items-start text-white lg:w-1/3 lg:p-4 md:w-1/3 ">
+                  <div className="flex w-[90%] h-[30rem] gap-10 justify-between mx-auto">
+                    <div className="flex items-start text-white lg:w-[40%] lg:p-10 lg:h-[90%] md:w-1/3 ">
                       <DriveImage
                         url={card.cover_img}
-                        className="h-full w-full"
+                        className="h-full w-full rounded-lg"
                       />
                     </div>
-                    <div className="flex flex-col gap-5 bg-black text-white w-2/3 ">
+                    <div className="flex flex-col gap-5 bg-black text-white w-2/3 lg:mt-[10vh] ">
                       <div className="">
-                        <h2 className="font-bold text-3xl text-yellow-400 uppercase lg:mt-[1rem]">
+                        <h2 className="font-bold text-3xl text-yellow-400 uppercase lg:my-[1rem]">
                           {card.title}
                         </h2>
-                        <p className="font-semibold text-2xl">
+                        <p className="font-semibold text-xl uppercase ">
                           {card.description}
                         </p>
                       </div>
@@ -84,7 +84,7 @@ function MainHead() {
                           )}
                           <Link
                             to={`/article/${card.article_id}`}
-                            className="text-yellow-500 ml-4"
+                            className="text-yellow-500 "
                           >
                             Continue Reading...
                           </Link>
@@ -116,34 +116,35 @@ function MainHead() {
               return (
                 <SwiperSlide
                   key={card.article_id}
-                  className="article-card bg-black  "
+                  className="article-card bg-black   flex items-center justify-center"
                 >
-                  <div className="bg-black w-full ">
+                  <div className="bg-black w-full h-[20rem]  ">
                     <div className="flex w-[80%] justify-center mx-auto mt-[2rem]">
                       <DriveImage
                         url={card.cover_img}
-                        className="h-[100%] w-full mb-10"
+                        className="h-[30%] w-[30%] "
                       />
                     </div>
-                    <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto">
-                      <div className="w-full">
-                        <p className="text-yellow-500 font-bold text-2xl">
+                    <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto p-3">
+                      <div className="w-full py-2">
+                        <p className= " card-title text-yellow-400 uppercase font-bold text-lg text-center mb-3">
                           {card.title}
                         </p>
-                        <p className="font-semibold text-xl  text-white">
+                        <p className="font-semibold text-sm text-white   ">
                           {card.description}
                         </p>
-                        <p className="scroll-content font-italic text-sm text-white ">
-                          {card && (
-                            <DisplayContent data={JSON.parse(card.content)} />
-                          )}
-                          <Link
+                        <Link
                             to={`/article/${card.article_id}`}
-                            className="text-yellow-500 ml-[1rem]"
+                            className="text-yellow-500 "
                           >
                             Continue Reading......
                           </Link>
-                        </p>
+                        {/* <p className="scroll-content font-italic text-sm text-white lg:my-3 ">
+                          {card && (
+                            <DisplayContent data={JSON.parse(card.content)} />
+                          )}
+                          
+                        </p> */}
                       </div>
                     </div>
                   </div>
@@ -156,8 +157,11 @@ function MainHead() {
   );
 }
 
-function DisplayContent({ data }) {
-  return <h1>{data.blocks[0].data.text.substring(0, 200)}...</h1>;
+function DisplayContent({ data, screenSize }) {
+  const maxChars = screenSize === 'lg' ? 350 : 350;
+  const slicedText = data.blocks[0].data.text.substring(0, maxChars);
+
+  return <h1 className="poppins-regular text-sm">{slicedText}...</h1>;
 }
 
 export default MainHead;
