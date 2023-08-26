@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DriveImage from "../components/DriveImage";
 
-function SectionFlex({ images, buttons, articles }) {
+function SectionFlex({ buttons, articles }) {
   const router = useNavigate();
   return (
     <div className="flex justify-between w-11/12 my-[5%] mx-auto flex-wrap p-1">

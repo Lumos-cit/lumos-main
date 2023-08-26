@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import book from "/Assets/Images/book.svg";
-import poster from "/Assets/Images/poster.svg";
-import carrer1 from "/Assets/Images/Career1.svg";
-import carrer2 from "/Assets/Images/Career2.svg";
+import book from "/assets/Images/book.svg";
+// import poster from "/Assets/Images/poster.svg";
+// import carrer1 from "/Assets/Images/Career1.svg";
+// import carrer2 from "/Assets/Images/Career2.svg";
 import AuthorName from "./AuthorName";
 import DriveImage from "./DriveImage";
 

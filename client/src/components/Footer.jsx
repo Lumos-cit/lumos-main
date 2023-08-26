@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/Assets/Images/logo.svg";
+import logo from "/assets/Images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
