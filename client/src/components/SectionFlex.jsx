@@ -9,7 +9,7 @@ function SectionFlex({ buttons, articles }) {
     <div className="flex justify-between w-11/12 my-[5%] mx-auto flex-wrap p-1">
       {articles.map((article, index) => (
         <div
-          className="h-[480px] w-[250px] mb-6 lg:mb-12 lg:w-[360px] mx-auto cursor-pointer"
+          className="h-[480px] w-[250px] mb-6 lg:my-12 lg:w-[360px] mx-auto cursor-pointer"
           key={index}
           onClick={() => router("/article/" + article.article_id)}
         >

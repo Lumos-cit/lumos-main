@@ -4,7 +4,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Blocks from "editorjs-blocks-react-renderer";
 
-
 function NewsFlex({ news }) {
   const navigate = useNavigate();
 
@@ -21,51 +20,52 @@ function NewsFlex({ news }) {
             key={index}
             onClick={() => handleNewsClick(newsItem.news_id)}
           >
-            <div className="basis-[60%]">
+            <div className="basis-[80%] p-16">
               <h1 className="poppins-bold my-[2%] text-2xl text-white">
-                {newsItem.title}
+                {newsItem.title.substring(0, 70)}...
               </h1>
               <p className="poppins-regular text-white">
-              {newsItem && (
-            <Blocks
-              data={JSON.parse(newsItem.content)}
-              config={{
-                embed: {
-                  className: "border-0",
-                },
-                header: {
-                  className: "font-bold",
-                },
-                image: {
-                  className: "w-full max-w-screen-md",
-                  actionsClassNames: {
-                    stretched: "w-full h-80 object-cover",
-                    withBorder: "border border-2",
-                    withBackground: "p-2",
-                  },
-                },
-                list: {
-                  className: "list-inside",
-                },
-                paragraph: {
-                  className: "text-white poppins-regular leading-relaxed",
-                  actionsClassNames: {
-                    alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
-                  },
-                },
-                quote: {
-                  className: "py-3 px-5 italic font-serif",
-                },
-              }}
-            />
-          )}
-                
-
+                {newsItem && (
+                  <Blocks
+                    data={JSON.parse(newsItem.content)}
+                    config={{
+                      embed: {
+                        className: "border-0",
+                      },
+                      header: {
+                        className: "font-bold",
+                      },
+                      image: {
+                        className: "w-full max-w-screen-md",
+                        actionsClassNames: {
+                          stretched: "w-full h-80 object-cover",
+                          withBorder: "border border-2",
+                          withBackground: "p-2",
+                        },
+                      },
+                      list: {
+                        className: "list-inside",
+                      },
+                      paragraph: {
+                        className: "text-white poppins-regular leading-relaxed",
+                        actionsClassNames: {
+                          alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
+                        },
+                      },
+                      quote: {
+                        className: "py-3 px-5 italic font-serif",
+                      },
+                    }}
+                  />
+                )}
               </p>
             </div>
-            <div className="basis-[20%] flex flex-col justify-center items-center gap-5 h-3/4 my-auto ">
+            <div className="basis-[20%] flex flex-col justify-between items-center gap-20 h-3/4 my-auto ">
               <p className="text-white">
                 {newsItem.createdAt.substring(0, 10)}
+              </p>
+              <p className="text-white">
+                Read More
               </p>
             </div>
           </div>
