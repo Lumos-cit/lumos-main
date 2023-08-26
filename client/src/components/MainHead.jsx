@@ -79,7 +79,7 @@ function MainHead() {
                           {card.title}
                         </h2>
                         <p className="font-semibold text-xl uppercase ">
-                          {card.description}
+                          {card.description.substring(0,50)}...
                         </p>
                       </div>
                       <div className="font-italic text-xl max-h-[10rem] scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent">
@@ -131,16 +131,16 @@ function MainHead() {
                     <div className="flex w-[80%] justify-center mx-auto mt-[2rem]">
                       <DriveImage
                         url={card.cover_img}
-                        className="h-[40%] w-[75%] "
+                        className="h-[40%] w-[85%] "
                       />
                     </div>
                     <div className="flex w-[80%] h-[20vh] justify-between flex-row mx-auto p-3  ">
                       <div className="w-full py-2">
-                        <p className= " card-title text-yellow-400 uppercase font-bold text-lg text-center mb-3">
+                        <p className= " card-title text-yellow-400 uppercase font-bold text-xl  mb-3">
                           {card.title}
                         </p>
-                        <p className="font-semibold text-sm text-white   ">
-                          {card.description}
+                        <p className="font-semibold text-md text-white   ">
+                        {card.description.substring(0,50)}...
                         </p>
                         <Link
                             to={`/article/${card.article_id}`}
@@ -168,7 +168,7 @@ function MainHead() {
 
 function DisplayContent({ data, screenSize }) {
   const maxChars = screenSize === 'lg' ? 350 : 350;
-  const slicedText = data.blocks[0].data.text.substring(0, maxChars).replace(/<\/?[^>]+(>|$)/g, "");
+  const slicedText = data.blocks[0].data.text.substring(0, maxChars).replace(/<\/?[^>]+(>|$)|&nbsp;/g, "");
 
   return <h1 className="poppins-regular text-md">{slicedText}...</h1>;
 }

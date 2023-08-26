@@ -52,7 +52,7 @@ const News1 = () => {
           >
             <div className="px-[10%] py-[10%]">
               <p className="ibm-bold text-2xl text-black">{item.createdAt.slice(0, 10)}</p>
-              <p className="ibm-bold text-xl text-white">{item.title}</p>
+              <p className="ibm-bold text-xl text-white">{item.title.substring(0,70)}</p>
               {authors.map((author) =>
                 author.author_id === item.author_id ? (
                   <div key={author.author_id} className="">
