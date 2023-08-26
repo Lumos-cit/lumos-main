@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div>
       <div className="hidden lg:block z-20">
-        <div className="flex justify-between h-[200px] w-full bg-[#DEDB44] ">
+        <div className="flex justify-between h-[200px] w-full bg-yellow-400 ">
           <div className="basis-3/4">
             <img src={logo} className="p-5" />
             <Link to='/about' className="pl-7 text-black ">About Us</Link>
@@ -55,13 +55,13 @@ function Footer() {
           </div>
         </div>
         {/* <hr className="border border-black" /> */}
-        <h1 className="text-center bg-[#DEDB44] text-black">
+        <h1 className="text-center  bg-yellow-400  text-black">
           LUMOS OFFICIAL 2023
         </h1>
       </div>
 
       <div className="block md:hidden z-20">
-        <div className="flex flex-col justify-center items-center w-full bg-[#DEDB44] ">
+        <div className="flex flex-col justify-center items-center w-full  bg-yellow-400  ">
           <img src={logo} className="p-5" />
           <Link to='/about' className=" text-black">About Us</Link>     
           <a href="mailto:lumos@citchennai.net" className="hover:cursor-pointer"  >Contact Us          </a>

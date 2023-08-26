@@ -14,7 +14,7 @@ function JoinUs() {
       <OneBigFamily />
       <div className="flex justify-center p-3">
           <a href="https://docs.google.com/forms/d/1APkSqSswelrWUyce49rvuQSe2wE402wb2yHycaDkACE/edit  " target='blank'>
-            <button className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] ">
+            <button className=" border-[#dbd846] border-2  bg-yellow-400  text-black  font-semibold ">
             JOIN NOW
           </button>
 
