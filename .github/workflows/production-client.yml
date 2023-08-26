@@ -27,6 +27,6 @@ jobs:
       with:
         server: ftp.lumoscit.in
         username: lumos@lumoscit.in
-        password: Lumos@cit301022
+        password: Lumos@cit301122
         server-dir : /public_html/
         local-dir : ./client/dist/
