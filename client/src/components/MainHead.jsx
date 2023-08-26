@@ -80,44 +80,13 @@ function MainHead() {
                       <div className="font-italic text-xl max-h-[10rem] scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent">
                         <p className="scroll-content">
                           {card && (
-                            <Blocks
-                              data={JSON.parse(card.content)}
-                              config={{
-                                embed: {
-                                  className: "border-0",
-                                },
-                                header: {
-                                  className: "font-bold",
-                                },
-                                image: {
-                                  className: "w-full max-w-screen-md",
-                                  actionsClassNames: {
-                                    stretched: "w-full h-80 object-cover",
-                                    withBorder: "border border-2",
-                                    withBackground: "p-2",
-                                  },
-                                },
-                                list: {
-                                  className: "list-inside",
-                                },
-                                paragraph: {
-                                  className:
-                                    "text-white poppins-regular leading-relaxed",
-                                  actionsClassNames: {
-                                    alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
-                                  },
-                                },
-                                quote: {
-                                  className: "py-3 px-5 italic font-serif",
-                                },
-                              }}
-                            />
+                            <DisplayContent data={JSON.parse(card.content)} />
                           )}
                           <Link
                             to={`/article/${card.article_id}`}
                             className="text-yellow-500 ml-4"
                           >
-                            Continue Reading......
+                            Continue Reading...
                           </Link>
                         </p>
                       </div>
@@ -166,40 +135,8 @@ function MainHead() {
                         </p>
                         <p className="scroll-content font-italic text-sm text-white ">
                           {card && (
-                            <Blocks
-                              data={JSON.parse(card.content)}
-                              config={{
-                                embed: {
-                                  className: "border-0",
-                                },
-                                header: {
-                                  className: "font-bold",
-                                },
-                                image: {
-                                  className: "w-full max-w-screen-md",
-                                  actionsClassNames: {
-                                    stretched: "w-full h-80 object-cover",
-                                    withBorder: "border border-2",
-                                    withBackground: "p-2",
-                                  },
-                                },
-                                list: {
-                                  className: "list-inside",
-                                },
-                                paragraph: {
-                                  className:
-                                    "text-white poppins-regular leading-relaxed",
-                                  actionsClassNames: {
-                                    alignment: "text-{alignment}", // This is a substitution placeholder: left or center.
-                                  },
-                                },
-                                quote: {
-                                  className: "py-3 px-5 italic font-serif",
-                                },
-                              }}
-                            />
+                            <DisplayContent data={JSON.parse(card.content)} />
                           )}
-                          {/* {card.content.substring(0, 40)} */}
                           <Link
                             to={`/article/${card.article_id}`}
                             className="text-yellow-500 ml-[1rem]"
@@ -217,6 +154,10 @@ function MainHead() {
       </div>
     </>
   );
+}
+
+function DisplayContent({ data }) {
+  return <h1>{data.blocks[0].data.text.substring(0, 200)}...</h1>;
 }
 
 export default MainHead;

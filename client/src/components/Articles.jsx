@@ -12,6 +12,7 @@ import DriveImage from "./DriveImage";
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [authors, setAuthors] = useState([]);
+  const [tag, setTag] = useState("xplore");
   const isMounted = useRef(false);
   const navigate = useNavigate();
 
@@ -24,9 +25,11 @@ function Articles() {
 
   function fetchArticles() {
     axios
-      .get(import.meta.env.VITE_BACKEND_URL + `/api/articles?limit=${6}`)
+      .get(
+        import.meta.env.VITE_BACKEND_URL + `/api/articles?tag=${tag}&limit=${6}`
+      )
       .then((res) => {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setArticles(res.data.data);
         articles.forEach((val) => {
           fetchAuthor(val.author_id);
@@ -38,38 +41,11 @@ function Articles() {
     axios
       .get(import.meta.env.VITE_BACKEND_URL + "/author/" + authorId)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setAuthors((prevAuthors) => [...prevAuthors, res.data]);
       });
   }
 
-  // const fetchArticles = () => {
-  //   const randomArr = getRandomNumbers();
-  //   setarticles((prevArticles) => []);
-  //   // console.log(randomArr);
-  //   randomArr.forEach(async (rnum) => {
-  //     const articleData = await axios.get(
-  //       import.meta.env.VITE_BACKEND_URL + `/api/article/${rnum}`
-  //     );
-
-  //     const authorData = await axios.get(
-  //       import.meta.env.VITE_BACKEND_URL +
-  //         `/author/${articleData.data.author_id}`
-  //     );
-  //     setarticles((prevArticles) => [...prevArticles, articleData.data]);
-  //     setAuthors((prevAuthors) => [...prevAuthors, authorData.data]);
-  //   });
-  // };
-
-  // const getRandomNumbers = () => {
-  //   let tempSet = new Set();
-  //   while (tempSet.size < 6) {
-  //     // 8 should be changed to 48
-  //     let value = Math.floor(Math.random() * 8 + 1);
-  //     tempSet.add(value);
-  //   }
-  //   return [...tempSet];
-  // };
   return (
     <div className="relative bg-white h-full pt-[10%] lg:pt-2">
       <NotJustArticles />
@@ -82,7 +58,10 @@ function Articles() {
         <div>
           <button
             className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
-            onClick={() => navigate("/xplore")}
+            onClick={() => {
+              setTag("xplore");
+              fetchArticles();
+            }}
           >
             XPLORE
           </button>
@@ -90,7 +69,10 @@ function Articles() {
         <div>
           <button
             className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
-            onClick={() => navigate("/campuslife")}
+            onClick={() => {
+              setTag("campusLife");
+              fetchArticles();
+            }}
           >
             CAMPUS LIFE
           </button>
@@ -98,7 +80,10 @@ function Articles() {
         <div>
           <button
             className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
-            onClick={() => navigate("/studenthq")}
+            onClick={() => {
+              setTag("studentHq");
+              fetchArticles();
+            }}
           >
             STUDENT HQ
           </button>
@@ -106,7 +91,10 @@ function Articles() {
         <div>
           <button
             className="btn btn-neutral border-[#F8F301] border-2 text-[#F8F301] btn-wide lg:btn-md mx-auto my-[2%]"
-            onClick={() => navigate("/career")}
+            onClick={() => {
+              setTag("career");
+              fetchArticles();
+            }}
           >
             CAREER
           </button>
@@ -128,12 +116,6 @@ function Articles() {
       </p>
 
       <div className="flex flex-row w-full gap-3 items-center justify-center flex-wrap my-5">
-        {/* <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
-        <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
-        <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
-        <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
-        <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" />
-        <img src={poster} className="w-[140px]   lg:w-[184px] h-[290px] mx-1 lg:mx-6" /> */}
         {articles &&
           authors &&
           articles.map((article, index) => {
