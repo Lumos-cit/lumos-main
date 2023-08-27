@@ -7,7 +7,7 @@ import DriveImage from "../components/DriveImage";
 function SectionFlex({ buttons, articles }) {
   const router = useNavigate();
   return (
-    <div className="flex flex-row px-1 py-3 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
+    <div className="flex flex-row px-1 py-5 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
       {articles.map((article, index) => (
         // <div
         //   className="h-[480px] w-[250px] mb-6 lg:mb-12 lg:w-[360px] mx-auto cursor-pointer"
@@ -34,7 +34,7 @@ function SectionFlex({ buttons, articles }) {
           key={article.article_id}
           onClick={() => navigate("/article/" + article.article_id)}
         >
-          <div className="card card-compact w-[11rem] md:w-[17rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+          <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
             <figure className="">
               {/* <img
                       src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -42,7 +42,7 @@ function SectionFlex({ buttons, articles }) {
                     /> */}
               <DriveImage
                 url={article.cover_img}
-                className="object-cover aspect-square w-[100px]"
+                className="object-cover aspect-square"
               />
             </figure>
             <div className="flex flex-col w-[100%] gap-5 p-3">
