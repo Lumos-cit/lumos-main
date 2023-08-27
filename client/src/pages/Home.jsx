@@ -10,6 +10,11 @@ import News1 from "../components/News1";
 function Home() {
   return (
     <div className="overflow-hidden">
+      <div className="bg-banner h-[200px] flex justify-end items-center">
+
+        <button className="btn bg-white text-black border-none hover:text-white mr-10">Explore Now </button>
+
+      </div>
       <MainHead />
       <MostRead />
       {/* <News /> */}

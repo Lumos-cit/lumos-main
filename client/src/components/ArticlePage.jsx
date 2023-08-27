@@ -84,7 +84,7 @@ function ArticlePage({ data, author, relatedArticles }) {
             />
           )}
           {/*  */}
-          <div className="p-12 flex gap-10">
+          <div className="p-12 flex flex-col md:flex-row gap-10">
             <div className="basis-[40%] ">
               {/* <img src={author && author.profile_pic} /> */}
               {author && <DriveImage url={author.profile_pic} className="" />}
@@ -100,9 +100,9 @@ function ArticlePage({ data, author, relatedArticles }) {
         <div className="basis-[40%] ">
           <div className="flex justify-center">
             {/* <img src={data && data.cover_img} className="p-10" /> */}
-            {data && <DriveImage url={data.cover_img} className="p-10" />}
+            {data && <DriveImage url={data.cover_img} className="p-10 w-full h-full" />}
           </div>
-          <div className="flex justify-center items-center">
+          {/* <div className="flex justify-center items-center">
             <button className="btn border rounded-full btn-sm mx-[1%] btn-outline  text-yellow-500">
               StudentHQ
             </button>
@@ -112,7 +112,7 @@ function ArticlePage({ data, author, relatedArticles }) {
             <button className="btn border rounded-full btn-sm mx-[1%] btn-outline text-yellow-500">
               Finance
             </button>
-          </div>
+          </div> */}
           <br />
           <hr />
           <div className="px-2 mt-[3%]">
@@ -124,7 +124,7 @@ function ArticlePage({ data, author, relatedArticles }) {
                   key={index}
                 >
                   <div className="flex gap-5 p-2">
-                    <div className="basis-[70%] mt-[3%] h-auto lg:h-[16vh] flex flex-col justify-between p-1">
+                    <div className="basis-[60%] mt-[3%] h-auto lg:h-[16vh] flex flex-col justify-between p-1">
                       <div>
                         <p className="text-white font-bold text-justify leading-5">
                           {relatedArticle.title}
@@ -143,7 +143,7 @@ function ArticlePage({ data, author, relatedArticles }) {
                     </div>
                     <div className="flex justify-center items-center ">
                       {/* <img src={relatedArticle.cover_img} className="" /> */}
-                      <DriveImage url={relatedArticle.cover_img} className="" />
+                      <DriveImage url={relatedArticle.cover_img} className="p-10 w-full h-full" />
                     </div>
                   </div>
                 </div>
