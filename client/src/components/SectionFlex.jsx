@@ -32,7 +32,7 @@ function SectionFlex({ buttons, articles }) {
         <div
           className="flex flex-col cursor-pointer"
           key={article.article_id}
-          onClick={() => navigate("/article/" + article.article_id)}
+          onClick={() => router("/article/" + article.article_id)}
         >
           <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-slate-400 h-[20rem] md:h-[25rem]">
             <figure className="">
