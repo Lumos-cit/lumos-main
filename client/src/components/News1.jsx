@@ -48,7 +48,7 @@ const News1 = () => {
       key={index}
       onClick={() => navigate(`/news/${item.news_id}`)} 
       style={{ cursor: 'pointer' }} 
-      className={`news-card-${index % 4} flex-grow lg:h-80`}
+      className={`news-card-${index % 4} flex-grow lg:h-80 border rounded-md lg:rounded-[2rem]`}
     >
       <div className="px-[10%] py-[10%]">
         <p className="ibm-bold  my-2 text-sm lg:text-2xl text-black">{item.createdAt.slice(0, 10)}</p>

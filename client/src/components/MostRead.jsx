@@ -129,7 +129,7 @@ function MostRead() {
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
-                <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+                <div className="card card-compact w-[10rem] md:w-[15rem]  bg-black shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
                   <figure className="">
                     {/* <img
                       src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -147,7 +147,7 @@ function MostRead() {
                       </button>
                       {article.createdAt.substring(0, 10)}
                     </h2>
-                    <p className="text-[12px] text-slate-300 font-bold">
+                    <p className="text-[12px] text-white leading-3 font-bold">
                       {article.title}
                     </p>
                     <div className="card-actions justify-start">

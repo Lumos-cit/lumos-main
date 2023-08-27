@@ -34,7 +34,7 @@ function SectionFlex({ buttons, articles }) {
           key={article.article_id}
           onClick={() => router("/article/" + article.article_id)}
         >
-          <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-slate-400 h-[20rem] md:h-[25rem]">
+          <div className="card card-compact w-[10rem] md:w-[15rem]  bg-black shadow-md shadow-slate-400 h-[20rem] md:h-[25rem]">
             <figure className="">
               {/* <img
                       src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -45,14 +45,14 @@ function SectionFlex({ buttons, articles }) {
                 className="object-cover aspect-square"
               />
             </figure>
-            <div className="flex flex-col w-[100%] gap-5 p-3">
+            <div className="flex flex-col w-[100%] gap-5 p-3 ">
               <h2 className="text-[10px] flex justify-between items-center">
                 <button className="tag text-yellow-500 border-[1px] p-1 border-yellow-500 rounded-md px-3">
                   {article.tag}
                 </button>
                 {article.createdAt.substring(0, 10)}
               </h2>
-              <p className="text-[12px] text-slate-300 font-bold">
+              <p className="text-[12px] text-white leading-3 font-bold">
                 {article.title}
               </p>
               <div className="card-actions justify-start">
