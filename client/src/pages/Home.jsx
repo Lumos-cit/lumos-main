@@ -11,14 +11,18 @@ function Home() {
   return (
     <div className="overflow-hidden">
       <div className="bg-banner h-[200px] flex justify-end items-center">
-
-        <button className="btn bg-white text-black border-none hover:text-white mr-10">Explore Now </button>
-
+        <a
+          href="https://hnm.lumoscit.in"
+          className="btn bg-white text-black border-none hover:text-white mr-10"
+          target="_blank"
+        >
+          Explore Now{" "}
+        </a>
       </div>
       <MainHead />
       <MostRead />
       {/* <News /> */}
-      <News1/>
+      <News1 />
       {/* <SpotlightMain /> */}
       <Articles />
       <JoinUs />
