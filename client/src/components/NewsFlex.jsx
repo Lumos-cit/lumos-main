@@ -20,7 +20,7 @@ function NewsFlex({ news }) {
             key={index}
             onClick={() => handleNewsClick(newsItem.news_id)}
           >
-            <div className="basis-[80%] p-16">
+            <div className="basis-[90%] p-16">
               <h1 className="poppins-bold my-[2%] text-2xl text-white">
                 {newsItem.title.substring(0, 70)}...
               </h1>
@@ -60,7 +60,7 @@ function NewsFlex({ news }) {
                 )}
               </p>
             </div>
-            <div className="basis-[20%] flex flex-col justify-between items-center gap-20 h-3/4 my-auto ">
+            <div className="basis-[10%] flex flex-col justify-between items-center gap-20 h-3/4 my-auto ">
               <p className="text-white">
                 {newsItem.createdAt.substring(0, 10)}
               </p>
