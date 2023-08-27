@@ -147,7 +147,9 @@ function MostRead() {
                       </button>
                       {article.createdAt.substring(0, 10)}
                     </h2>
-                    <p className="text-[12px] font-bold">{article.title}</p>
+                    <p className="text-[12px] text-slate-300 font-bold">
+                      {article.title}
+                    </p>
                     <div className="card-actions justify-start">
                       {/* <button className="btn btn-primary">Buy Now</button> */}
                       <AuthorName authorId={article.author_id} />

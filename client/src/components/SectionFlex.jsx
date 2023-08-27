@@ -34,7 +34,7 @@ function SectionFlex({ buttons, articles }) {
           key={article.article_id}
           onClick={() => navigate("/article/" + article.article_id)}
         >
-          <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+          <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-slate-400 h-[20rem] md:h-[25rem]">
             <figure className="">
               {/* <img
                       src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -52,7 +52,9 @@ function SectionFlex({ buttons, articles }) {
                 </button>
                 {article.createdAt.substring(0, 10)}
               </h2>
-              <p className="text-[12px] font-bold">{article.title}</p>
+              <p className="text-[12px] text-slate-300 font-bold">
+                {article.title}
+              </p>
               <div className="card-actions justify-start">
                 {/* <button className="btn btn-primary">Buy Now</button> */}
                 <AuthorName authorId={article.author_id} />
