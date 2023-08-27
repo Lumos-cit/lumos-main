@@ -114,7 +114,7 @@ function Articles() {
         possible are shattered.
       </p>
 
-      <div className="flex flex-row px-1 py-3 gap-2 md:gap-[2rem] w-full justify-center flex-wrap">
+      <div className="flex flex-row px-1 py-3 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
         {articles &&
           authors &&
           articles.map((article, index) => {
@@ -161,7 +161,7 @@ function Articles() {
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
-                <div className="card card-compact w-[11rem] md:w-[17rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+                <div className="card card-compact w-[11rem] md:w-[15rem]  bg-base-200 shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
                   <figure className="">
                     {/* <img
                       src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
