@@ -29,7 +29,7 @@ function MainHead() {
     axios
       .get(import.meta.env.VITE_BACKEND_URL + `/api/articles`)
       .then((res) => {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setCards(res.data.data);
       });
   }

@@ -5,6 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         'banner' : "url('assets/banner.svg')",
+        'banner-md' : "url('assets/banner-md.svg')",
+        'banner-sm' : "url('assets/banner-sm.svg')",
 
       },
       backgroundColor:{

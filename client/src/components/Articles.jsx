@@ -56,7 +56,7 @@ function Articles() {
       <div className="flex justify-center lg:justify-between mt-[5%] lg:mt-10 w-5/6 mx-auto flex-wrap">
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2 text-yellow-500 btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2 text-yellow-500 btn-wide btn-sm lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("xplore");
               fetchArticles();
@@ -67,7 +67,7 @@ function Articles() {
         </div>
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide btn-sm lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("campusLife");
               fetchArticles();
@@ -78,7 +78,7 @@ function Articles() {
         </div>
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide btn-sm lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("studentHq");
               fetchArticles();
@@ -89,7 +89,7 @@ function Articles() {
         </div>
         <div>
           <button
-            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide lg:btn-md mx-auto my-[2%]"
+            className="btn btn-neutral border-[#F8F301] border-2  text-yellow-500  btn-wide btn-sm lg:btn-md mx-auto my-[2%]"
             onClick={() => {
               setTag("career");
               fetchArticles();
@@ -100,19 +100,52 @@ function Articles() {
         </div>
       </div>
 
-      <p className="text-start text-black w-5/6 mx-auto mt-10">
-        The Xplore section is an extraordinary realm filled with boundless
-        creativity and endless possibilities. It opens the doors to a world
-        where imagination knows no bounds and thinking outside the box becomes
-        second nature. This section is truly awe-inspiring, as it not only
-        encourages exploration but makes you feel like the very essence of
-        adventure itself.Within the Xplore section, there is a captivating
-        energy that ignites the spark of curiosity within each individual. It
-        invites you to step outside your comfort zone, daring you to embrace new
-        experiences and venture into uncharted territories. It is a place where
-        limitations cease to exist, and the boundaries of what is deemed
-        possible are shattered.
-      </p>
+      {(() => {
+        switch (tag) {
+          case "xplore":
+            return (
+              <p className="text-start text-black w-5/6 mx-auto mt-10">
+                Ever thought of piercing the mundane and discovering the
+                marvelous. Well, then it's time for a blast! Fly with us
+                together in thoughts and inspirations! Let's uphill battles in a
+                wink of an eye with the sparks of creative shots. Cheer up!!!
+                The intelligence spiced with fun will be at your spot here on
+                Lumos!
+              </p>
+            );
+          case "studentHq":
+            return (
+              <p className="text-start text-black w-5/6 mx-auto mt-10">
+                Vivify your spirits! Kick out the emptiness. The powerful
+                community is cruising their way to success. This fiercely
+                competitive world cannot stop them from crafting their life.
+                Batten down the financial hatches, all under the aegis of
+                Student Head Quarters. The runway is all set for student
+                take-off!
+              </p>
+            );
+          case "career":
+            return (
+              <p className="text-start text-black w-5/6 mx-auto mt-10">
+                Sail your way towards the grandest vision of your career. Lumos
+                footholds Career exclusively to set you assail the hurdles in
+                your career pathway. The plethora of opportunities is awaiting
+                in the ocean of professions. Catch your space from Lumos!
+              </p>
+            );
+          case "campusLife":
+            return (
+              <p className="text-start text-black w-5/6 mx-auto mt-10">
+                Let's rekindle the cherishing vibes, unforgettable journey and
+                all the fun loving memories endued in campus life.The ticks of
+                the clock are heralding more such times! Keep no halt! Lumos is
+                on the way, entangling the everlasting pages of our campus days.{" "}
+              </p>
+            );
+          default:
+            return null; 
+        }
+      })()}
 
       <div className="flex flex-row px-1 py-3 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
         {articles &&

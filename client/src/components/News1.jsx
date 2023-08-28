@@ -26,7 +26,7 @@ const News1 = () => {
     axios
       .get(import.meta.env.VITE_BACKEND_URL + '/author')
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setAuthors(res.data.data);
       });
   }
@@ -36,7 +36,7 @@ const News1 = () => {
       <div className="bg-white">
       <StickWithUs />
 
-      <h1 className="ibm-bold text-6xl lg:text-[150px] text-center text-black leading-none pt-10">
+      <h1 className="ibm-bold text-6xl lg:text-[150px] text-center text-black leading-none pt-5 lg:pt-10">
         NEWS
       </h1>
       <p className="text-[#FFC600] text-[48px] text-center ibm-bold leading-none">
