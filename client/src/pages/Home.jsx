@@ -6,8 +6,14 @@ import Articles from "../components/Articles";
 import JoinUs from "../components/JoinUs";
 import SpotlightMain from "../components/SpotlightMain";
 import News1 from "../components/News1";
+import Banner from "../components/Banner";
+import { useState, useEffect } from "react";
 
 function Home() {
+  const [showBanner, setShowBanner] = useState(false);
+  useEffect(() => {
+    setShowBanner(true);
+  }, []);
   return (
     <div className="overflow-hidden">
       <div className="bg-banner-md lg:bg-banner h-[80px] lg:h-[200px] bg-no-repeat flex justify-end items-center">
@@ -30,6 +36,7 @@ function Home() {
           </a>
         </section>
       </div>
+      {showBanner && <Banner setShowBanner={setShowBanner} />}
       <MainHead />
       <MostRead />
       {/* <News /> */}
