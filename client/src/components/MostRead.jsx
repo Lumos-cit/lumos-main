@@ -53,7 +53,7 @@ function MostRead() {
 
   function fetchArticles() {
     axios
-      .get(import.meta.env.VITE_BACKEND_URL + `/api/articles?limit=${5}`)
+      .get(import.meta.env.VITE_BACKEND_URL + `/api/articles?limit=${4}`)
       .then((res) => {
         // console.log(res.data.data);
         setArticles(res.data.data);
@@ -129,7 +129,7 @@ function MostRead() {
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
               >
-                <div className="card card-compact w-[10rem] md:w-[15rem]  bg-black shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
+                <div className="card card-compact w-[10rem] md:w-[18rem]  bg-black shadow-md shadow-yellow-800 h-[20rem] md:h-[25rem]">
                   <figure className="">
                     {/* <img
                       src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"

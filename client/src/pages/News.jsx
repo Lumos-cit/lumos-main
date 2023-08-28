@@ -13,7 +13,7 @@ import NewsFlex from "../components/NewsFlex";
 function News() {
   const head = "NEWS";
   const body =
-    "This article dives into the common money traps that many college students fall into, and offers practical advice on how to avoid them. From overspending to getting caught up in credit card offers and Crypto scams, we’ll show you how to make wise financial choices that will set you up for success during and after college.";
+    "Stay upto date about the latest happenings in and around our college! From symposiums and events to career drives and workshops, this is your one stop destination about everything CIT. Turn on your notifications and don't miss out on any more news!";
 
 
   const[news , setNews] = useState([])
