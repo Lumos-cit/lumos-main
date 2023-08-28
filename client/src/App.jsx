@@ -12,7 +12,7 @@ import News1 from "./components/News1";
 import SpotLight from "./pages/SpotLight";
 import StudentHQ from "./pages/StudentHQ";
 import Xplore from "./pages/Xplore";
-import Newspage from './components/NewsPage'
+import Newspage from "./components/NewsPage";
 
 function App() {
   return (
