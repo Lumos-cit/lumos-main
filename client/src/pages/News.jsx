@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import SectionHead from "../Components/SectionHead";
-import SectionFlex from "../Components/SectionFlex";
+// import SectionFlex from "../Components/SectionFlex";
 import NewsFlex from "../components/NewsFlex";
 // import News1 from "/Assets/Images/News1.svg";
 // import News2 from "/Assets/Images/News2.svg";

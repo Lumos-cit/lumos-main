@@ -16,7 +16,7 @@ import SectionFlex from "../Components/SectionFlex";
 function StudentHQ() {
   const head = "STUDENT HQ";
   const body =
-    "This article dives into the common money traps that many college students fall into, and offers practical advice on how to avoid them. From overspending to getting caught up in credit card offers and Crypto scams, we’ll show you how to make wise financial choices that will set you up for success during and after college.";
+    "Vivify your spirits! Kick out the emptiness. The powerful community is cruising their way to success. This fiercely competitive world cannot stop them from crafting their life. Batten down the financial hatches, all under the aegis of Student Head Quarters. The runway is all set for student take-off!    ";
   // const Image1 = [Career1, Career2, Career3];
   // const Image2 = [Career4, Career5, Career6];
   // const Image3 = [Career7, Career8, Career9];

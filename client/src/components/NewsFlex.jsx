@@ -16,12 +16,12 @@ function NewsFlex({ news }) {
       {news.map((newsItem, index) => {
         return (
           <div
-            className="flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start w-4/5 mx-auto border border-solid border-white my-[2%] bg-black shadow-md shadow-white cursor-pointer"
+            className="flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start w-11/12 mx-auto border border-solid border-white my-[2%] bg-black shadow-md shadow-white cursor-pointer"
             key={index}
             onClick={() => handleNewsClick(newsItem.news_id)}
           >
-            <div className="basis-[90%] p-16">
-              <h1 className="poppins-bold my-[2%] text-2xl text-white">
+            <div className="basis-[90%] p-1 lg:p-16">
+              <h1 className="poppins-bold my-[2%] text-2xl text-white font-black">
                 {newsItem.title.substring(0, 70)}...
               </h1>
               <p className="poppins-regular text-white">
@@ -60,8 +60,8 @@ function NewsFlex({ news }) {
                 )}
               </p>
             </div>
-            <div className="basis-[10%] flex flex-col justify-between items-center gap-20 h-3/4 my-auto ">
-              <p className="text-white">
+            <div className="basis-[10%] flex flex-row lg:flex-col justify-between items-center gap-20 h-3/4 my-auto ">
+              <p className="text-white font-black">
                 {newsItem.createdAt.substring(0, 10)}
               </p>
               <p className="text-white">

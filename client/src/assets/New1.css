@@ -1,6 +1,6 @@
 .news-card-0{
 
-  background-color: #FF7575;
+  background: #B44155;
   position: relative;
   border-radius: 2rem;
   cursor: pointer;
@@ -8,21 +8,21 @@
 }
 .news-card-1{
 
-  background-color: #67FFFF;
+  background: #D1D1D5;
   position: relative;
   border-radius: 2rem;
   cursor: pointer;
 }
 .news-card-2{
 
-  background-color: #f4f401;
+  background: #5A7D7C;
   position: relative;
   border-radius: 2rem;
   cursor: pointer;
 }
 .news-card-3{
   
-  background-color: #8490FF;
+  background: #404E73;
   position: relative;
   border-radius: 2rem;
   cursor: pointer;

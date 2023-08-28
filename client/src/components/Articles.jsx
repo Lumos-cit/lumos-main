@@ -104,7 +104,7 @@ function Articles() {
         switch (tag) {
           case "xplore":
             return (
-              <p className="text-start text-black w-5/6 mx-auto mt-10">
+              <p className="text-start text-black w-5/6 mx-auto mt-10 text-xl">
                 Ever thought of piercing the mundane and discovering the
                 marvelous. Well, then it's time for a blast! Fly with us
                 together in thoughts and inspirations! Let's uphill battles in a
@@ -115,7 +115,7 @@ function Articles() {
             );
           case "studentHq":
             return (
-              <p className="text-start text-black w-5/6 mx-auto mt-10">
+              <p className="text-start text-black w-5/6 mx-auto mt-10 text-xl">
                 Vivify your spirits! Kick out the emptiness. The powerful
                 community is cruising their way to success. This fiercely
                 competitive world cannot stop them from crafting their life.
@@ -126,7 +126,7 @@ function Articles() {
             );
           case "career":
             return (
-              <p className="text-start text-black w-5/6 mx-auto mt-10">
+              <p className="text-start text-black w-5/6 mx-auto mt-10 text-xl">
                 Sail your way towards the grandest vision of your career. Lumos
                 footholds Career exclusively to set you assail the hurdles in
                 your career pathway. The plethora of opportunities is awaiting
@@ -135,7 +135,7 @@ function Articles() {
             );
           case "campusLife":
             return (
-              <p className="text-start text-black w-5/6 mx-auto mt-10">
+              <p className="text-start text-black w-5/6 mx-auto mt-10 text-xl">
                 Let's rekindle the cherishing vibes, unforgettable journey and
                 all the fun loving memories endued in campus life.The ticks of
                 the clock are heralding more such times! Keep no halt! Lumos is
@@ -147,7 +147,7 @@ function Articles() {
         }
       })()}
 
-      <div className="flex flex-row px-1 py-3 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
+      <div className="flex flex-row px-1 py-5 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
         {articles &&
           authors &&
           articles.map((article, index) => {

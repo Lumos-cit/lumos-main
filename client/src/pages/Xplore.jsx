@@ -29,7 +29,7 @@ function Xplore() {
 
   const head = "XPLORE";
   const body =
-    "This article dives into the common money traps that many college students fall into, and offers practical advice on how to avoid them. From overspending to getting caught up in credit card offers and Crypto scams, we’ll show you how to make wise financial choices that will set you up for success during and after college.";
+    "Ever thought of piercing the mundane and discovering the marvelous. Well, then it's time for a blast! Fly with us together in thoughts and inspirations! Let's uphill battles in a wink of an eye with the sparks of creative shots. Cheer up!!! The intelligence spiced with fun will be at your spot here on Lumos!";
   // const Image1 = [Career1, Career2, Career3];
   // const Image2 = [Career4, Career5, Career6];
   // const Image3 = [Career7, Career8, Career9];

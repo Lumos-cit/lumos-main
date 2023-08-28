@@ -16,7 +16,7 @@ import axios from "axios";
 function Career() {
   const head = "Career";
   const body =
-    "This article dives into the common money traps that many college students fall into, and offers practical advice on how to avoid them. From overspending to getting caught up in credit card offers and Crypto scams, we’ll show you how to make wise financial choices that will set you up for success during and after college.";
+    "Sail your way towards the grandest vision of your career. Lumos footholds Career exclusively to set you assail the hurdles in your career pathway. The plethora of opportunities is awaiting in the ocean of professions. Catch your space from Lumos!    ";
   // const Image1 = [Career1, Career2, Career3, Career4, Career5, Career6];
   const Button1 = [
     "studentHQ",

@@ -51,18 +51,18 @@ const News1 = () => {
       className={`news-card-${index % 4} flex-grow lg:h-80 border rounded-md lg:rounded-[2rem]`}
     >
       <div className="px-[10%] py-[10%]">
-        <p className="ibm-bold  my-2 text-sm lg:text-2xl text-black">{item.createdAt.slice(0, 10)}</p>
+        <p className="ibm-bold  my-2 text-sm lg:text-2xl text-white">{item.createdAt.slice(0, 10)}</p>
         {item.title.length > (window.innerWidth >= 1024 ? 30 : 50) ? (
-          <p className="ibm-bold my-2 text-sm lg:text-xl text-black">
+          <p className="poppins-bold my-2 text-sm lg:text-xl text-white">
             {item.title.slice(0, window.innerWidth >= 1024 ? 100 : 40)}....
           </p>
         ) : (
-          <p className="ibm-bold my-2 text-sm lg:text-xl text-black">{item.title}</p>
+          <p className="ibm-bold my-2 text-sm lg:text-xl text-white">{item.title}</p>
         )}        
         {authors.map((author) =>
           author.author_id === item.author_id ? (
             <div key={author.author_id} className="absolute lg:bottom-5 md:bottom-0">
-              <p className="text-sm lg:text-xl ibm-italic text-black  ">{author.name}</p>
+              <p className="text-sm lg:text-xl poppins-regular text-white  ">{author.name}</p>
             </div>
           ) : null
         )}
