@@ -7,6 +7,9 @@ import axios from "axios";
 import NotJustArticles from "../SvgComponents/NotJustArticles";
 import AuthorName from "./AuthorName";
 import DriveImage from "./DriveImage";
+import { motion, useAnimation } from "framer-motion";
+
+import { useInView } from "react-intersection-observer";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -15,12 +18,41 @@ function Articles() {
   const isMounted = useRef(false);
   const navigate = useNavigate();
 
+  const { ref, inView } = useInView();
+
+  const animation = useAnimation();
+
+  const articlevariant = {
+    hidden: (index) => ({
+      opacity: 0,
+      pathLength: 0,
+      y: "-10vw",
+    }),
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: index * 0.5,
+        duration: 1,
+      },
+    }),
+  };
+
   useEffect(() => {
     if (!isMounted.current) {
       isMounted.current = true;
       fetchArticles();
     }
-  }, []);
+
+    if (inView) {
+      animation.start("visible");
+    }
+    // if (!inView) {
+    //   animation.stop("hidden");
+    // }
+
+    // console.log(inView);
+  }, [inView, animation]);
 
   function fetchArticles() {
     axios
@@ -46,7 +78,7 @@ function Articles() {
   }
 
   return (
-    <div className="relative bg-white h-full pt-[10%] lg:pt-2">
+    <div  className="relative bg-white h-full pt-[10%] lg:pt-2">
       <NotJustArticles />
 
       <h1 className="text-3xl lg:text-8xl ibm-bold  text-yellow-500  tracking-widest leading-none text-center pt-5">
@@ -143,11 +175,11 @@ function Articles() {
               </p>
             );
           default:
-            return null; 
+            return null;
         }
       })()}
 
-      <div className="flex flex-row px-1 py-5 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
+      <div ref={ref} className="flex flex-row px-1 py-5 gap-3 md:gap-[2rem] w-full justify-center flex-wrap">
         {articles &&
           authors &&
           articles.map((article, index) => {
@@ -189,7 +221,11 @@ function Articles() {
               //     </p>
               //   </div> */}
               // </div>
-              <div
+              <motion.div
+              variants={articlevariant}
+              initial="hidden"
+              animate={animation}
+              custom={index}
                 className="flex flex-col cursor-pointer"
                 key={article.article_id}
                 onClick={() => navigate("/article/" + article.article_id)}
@@ -230,7 +266,7 @@ function Articles() {
                     {article.title}
                   </p>
                 </div> */}
-              </div>
+              </motion.div>
             );
           })}
       </div>

@@ -16,24 +16,26 @@ import Newspage from "./components/NewsPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <RouteNames />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="article/:articleId" element={<Article />} />
-        <Route path="campuslife" element={<CampusLife />} />
-        <Route path="career" element={<Career />} />
-        <Route path="news" element={<News />} />
-        <Route path="news1" element={<News1 />} />
-        <Route path="spotlight" element={<SpotLight />} />
-        <Route path="studenthq" element={<StudentHQ />} />
-        <Route path="xplore" element={<Xplore />} />
-        <Route path="/news/:news_id" element={<Newspage />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <section>
+      <BrowserRouter>
+        <NavBar />
+        <RouteNames />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="about" element={<AboutUs />} />
+          <Route path="article/:articleId" element={<Article />} />
+          <Route path="campuslife" element={<CampusLife />} />
+          <Route path="career" element={<Career />} />
+          <Route path="news" element={<News />} />
+          <Route path="news1" element={<News1 />} />
+          <Route path="spotlight" element={<SpotLight />} />
+          <Route path="studenthq" element={<StudentHQ />} />
+          <Route path="xplore" element={<Xplore />} />
+          <Route path="/news/:news_id" element={<Newspage />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </section>
   );
 }
 
