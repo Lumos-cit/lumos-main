@@ -21,7 +21,7 @@ const News1 = () => {
     hidden: (index) => ({
       opacity: 0,
       pathLength: 0,
-      y: "-10vw",
+      y: "10vw",
     }),
     visible: (index) => ({
       opacity: 1,
