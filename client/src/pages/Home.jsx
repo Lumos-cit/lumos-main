@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 function Home() {
   const [showBanner, setShowBanner] = useState(false);
   useEffect(() => {
-    setShowBanner(true);
+    setShowBanner(false);
   }, []);
   return (
     <div className="overflow-hidden">
