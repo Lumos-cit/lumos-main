@@ -1,5 +1,5 @@
 import React from "react";
-import newBanner from "../assets/banner-new.svg";
+import newBanner from "../assets/ban.png";
 
 const Banner = ({ setShowBanner }) => {
   return (
