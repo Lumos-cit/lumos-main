@@ -168,11 +168,11 @@ function NavBar() {
       </div>
       <div className="basis-1/2">
         <div className="flex justify-center items-center">
-          <img
+          {/* <img
             src={logo}
             onClick={() => router("/")}
             className="hover:cursor-pointer"
-          />
+          /> */}
         </div>
       </div>
       <div className="basis-1/4">
