@@ -18,7 +18,7 @@ const Banner = ({ setShowBanner }) => {
           </button> */}
           <a
             className="text-[12px] md:text-[14px] px-9 py-1 font-bold  bg-slate-100 text-slate-950 rounded-md hover:bg-slate-900 hover:text-slate-100"
-            href="https://hnm.lumoscit.in"
+            href="https://lumosmagazine.s3.amazonaws.com/lumos_jan'24_compressed.pdf"
             target="_blank"
           >
             EXPLORE

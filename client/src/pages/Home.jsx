@@ -19,7 +19,7 @@ function Home() {
       <div className="bg-banner-md lg:bg-banner h-[80px] lg:h-[200px] bg-no-repeat flex justify-end items-center">
         <section className="hidden lg:block">
           <a
-            href="https://hnm.lumoscit.in"
+            href="https://lumosmagazine.s3.amazonaws.com/lumos_jan'24_compressed.pdf"
             className="btn btn-md bg-white text-black border-none hover:text-white mr-10"
             target="_blank"
           >
