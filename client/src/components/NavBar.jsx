@@ -105,17 +105,7 @@ function NavBar() {
                 </Link>
               </li>
               <hr />
-              <li>
-                <a
-                  className="text-black poppins-regular text-sm lg:text-xl ml-2 hover:text-black"
-                  href="https://lumos-web-sigma.vercel.app/"
-                  target="_blank"
-                >
-                  {" "}
-                  Register Now
-                </a>
-              </li>
-              <hr />
+              
               {/* <li>
                 <a className="text-black poppins-regular text-sm lg:text-xl ml-2 hover:text-black">
                   {" "}
@@ -187,11 +177,6 @@ function NavBar() {
       </div>
       <div className="basis-1/4">
         <div className="flex justify-end items-end">
-          <a href="https://lumos-web-sigma.vercel.app/" target="_blank">
-            <button className="btn btn-outline btn-warning btn-sm mr-4 hidden lg:block">
-              Register Now
-            </button>
-          </a>
         </div>
       </div>
     </div>

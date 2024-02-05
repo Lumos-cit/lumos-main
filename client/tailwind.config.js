@@ -10,8 +10,6 @@ export default {
         'ban-new' : "url('assets/ban.png')",
         'ban-new-sm': "url('assets/ban-sm.png')",
         'ban-new-md': "url('assets/ban-md.png')"
-
-
       },
       backgroundColor:{
         'custom-1': "#F8F301",
