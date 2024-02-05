@@ -28,7 +28,7 @@ function Home() {
         </section>
         <section className="block lg:hidden">
           <a
-            href="https://hnm.lumoscit.in"
+            href="https://lumosmagazine.s3.amazonaws.com/lumos_jan'24_compressed.pdf"
             className="btn btn-xs bg-white text-black border-none hover:text-white"
             target="_blank"
           >
