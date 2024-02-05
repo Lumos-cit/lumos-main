@@ -16,23 +16,23 @@ function Home() {
   }, []);
   return (
     <div className="overflow-hidden">
-      <div className="bg-ban-new-md lg:bg-ban-new-md h-[180px] lg:h-[200px] bg-no-repeat flex justify-end items-center sm:w-370 sm:h-78">
+      <div className="bg-ban-new-md lg:bg-ban-new h-[80px] lg:h-[200px] bg-no-repeat flex justify-end items-center">
         <section className="hidden lg:block">
           <a
             href="https://lumosmagazine.s3.amazonaws.com/lumos_jan'24_compressed.pdf"
-            className="btn btn-md bg-white text-black border-none hover:text-white mr-10"
+            className="btn btn-md bg-custom-3 text-cust border-none hover:text-white mr-10"
             target="_blank"
           >
-            Explore Now{" "}
+            Read Now{" "}
           </a>
         </section>
         <section className="block lg:hidden">
           <a
             href="https://lumosmagazine.s3.amazonaws.com/lumos_jan'24_compressed.pdf"
-            className="btn btn-xs bg-white text-black border-none hover:text-white"
+            className="btn btn-xs bg-custom-3 text-cust border-none hover:text-white"
             target="_blank"
           >
-            Explore
+            Read
           </a>
         </section>
       </div>
